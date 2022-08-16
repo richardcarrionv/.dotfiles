@@ -101,3 +101,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 neofetch
+alias dotfiles='/usr/bin/git --git-dir=/home/carri/.dotfiles/ --work-tree=/home/carri'

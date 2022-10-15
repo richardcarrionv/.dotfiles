@@ -48,33 +48,8 @@ set expandtab
 set showmatch
 
 
-call plug#begin('~/.nvim/plugged')
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'preservim/nerdtree'
-    Plug 'morhetz/gruvbox'
-    Plug 'christoomey/vim-tmux-navigator'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'alvan/vim-closetag'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'rakr/vim-one'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'tpope/vim-surround'
-    Plug 'lervag/vimtex'
-    Plug 'preservim/nerdcommenter'
-    Plug 'OmniSharp/omnisharp-vim'
-    Plug 'tpope/vim-fugitive'
-    " post install (yarn install | npm install) then load plugin only for editing supported files
-    Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-    "Plug 'kyazdani42/nvim-web-devicons'
-    "Plug 'romgrk/barbar.nvim'
-    Plug 'gcmt/taboo.vim'
-call plug#end()
-
-
+so ~/config-files/.vim/plugins.vim
+so ~/config-files/.vim/plugins-configs.vim
 "so ~/config-files/.vim/maps.vim
 
 " Start NERDTree when Vim is started without file 
@@ -124,6 +99,7 @@ nnoremap <leader>nf <cmd>NERDTreeFind<cr>
 nnoremap <leader>nn <cmd>NERDTreeFocus<cr>
 
 nnoremap <leader>tc <cmd>tabclose<cr>
+nnoremap <leader>cf <cmd>tabnew \| e $MYVIMRC \| NERDTreeFind<cr>
 nnoremap <leader>tn <cmd>tabnew<cr>
 nnoremap <leader>tt <cmd>tabnew \| terminal powershell.exe<Enter>i
 nnoremap <leader>ts <cmd>vsplit \| terminal powershell.exe<Enter>i

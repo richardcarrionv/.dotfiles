@@ -34,7 +34,7 @@ memory{
 format = "%used/%total"
 }
 wireless wlp7s0 {
-    format_up = "%quality  %essid %ip"
+    format_up = "%quality  %essid %ipv4"
     format_down = "down"
 }
 

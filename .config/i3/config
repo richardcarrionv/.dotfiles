@@ -28,7 +28,7 @@ font pango:monospace 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id xmodmap .xmodmap
+#exec --no-startup-id xmodmap .xmodmap
 exec --no-startup-id xrandr --output HDMI-1-1 --auto --above eDP-1
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id pasystray
@@ -144,6 +144,8 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+bindsym $mod+Tab workspace next
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -196,6 +198,7 @@ bar {
         
         tray_output primary
         status_command i3status
+# status_command i3blocks
 	    position top
         font pango: Hack Regular Nerd Font Complete 11
 }
@@ -259,3 +262,4 @@ mode "$mode_gaps_outer" {
 
 exec "xmodmap ~/.xmodmap"
 exec "setxkbmap -option 'ctrl:swapcaps'"
+exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'

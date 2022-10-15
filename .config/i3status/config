@@ -5,8 +5,7 @@
 # It is important that this file is edited as UTF-8.
 # The following line should contain a sharp s:
 # ß
-# If the above line is not correctly displayed, fix your editor first!
-###############################################################################
+# If the above line is not correctly displayed, fix your editor first! ##############################################################################
 #
 
 general {
@@ -26,6 +25,7 @@ order += "wireless wlp7s0"
 order += "ethernet enp8s0"
 order += "battery 0"
 order += "cpu_usage 0"
+order += "cpu_temperature 0"
 order += "memory"
 #order += "load"
 order += "tztime local"

@@ -65,7 +65,7 @@ cmp.setup({
         { name = 'buffer', max_item_count = 3 },
         { name = 'nvim_lsp_signature_help' },
         { name = 'latex_symbols', max_item_count = 3 },
-        { name = 'omni', },
+  --      { name = 'omni', },
     }),
 
     experimental = {

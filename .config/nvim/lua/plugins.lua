@@ -146,7 +146,7 @@ return packer.startup(function(use)
 
 
     -- Lua dev for init.lua and plugin development
-    use("folke/lua-dev.nvim")
+    use("folke/neodev.nvim")
 
 
     -- Bufferline

@@ -1,4 +1,4 @@
-require('lua-dev').setup({})
+require('neodev').setup({})
 local mappings = require('mappings')
 
 local mason = require('mason')

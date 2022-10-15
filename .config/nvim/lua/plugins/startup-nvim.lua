@@ -41,7 +41,7 @@ require('startup').setup({
             { " File Browser", "Telescope file_browser", "<leader>." },
             {
                 "  Configuration",
-                "cd C:/Users/carri/AppData/Local/nvim/ | edit lua/plugins.lua |  vsplit init.lua | split lua/mappings.lua  ",
+                "cd ~/.config/nvim/ | edit lua/plugins.lua |  vsplit init.lua | split lua/mappings.lua  ",
                 "<leader>c"
             },
         },

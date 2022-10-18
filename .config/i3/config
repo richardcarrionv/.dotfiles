@@ -31,6 +31,9 @@ font pango:monospace 8
 #exec --no-startup-id xmodmap .xmodmap
 exec --no-startup-id xrandr --output HDMI-1-1 --auto --above eDP-1
 exec --no-startup-id dex --autostart --environment i3
+
+#exec --no-startup-id polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 
@@ -40,11 +43,9 @@ exec --no-startup-id nm-applet
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id feh --bg-fill ~/Downloads/wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/Downloads/linux-wallpaper.jpg
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# NetworkManager is the most popular way to manage wireless networks on Linux, and nm-applet is a desktop environment-independent system tray GUI for it. exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -53,8 +54,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
+bindsym XF86MonBrightnessUp exec "brightnessctl s +2%"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 2%-"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -142,7 +143,6 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
 
 bindsym $mod+Tab workspace next
 
@@ -156,7 +156,6 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -164,6 +163,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -194,30 +194,32 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        
-        tray_output primary
-        status_command i3status
-# status_command i3blocks
-	    position top
-        font pango: Hack Regular Nerd Font Complete 11
-}
+# bar {
+#         
+#         tray_output primary
+#         status_command polybar
+#         status_command exec /home/carri/.config/i3status/net-speed.sh
+#         # status_command i3blocks
+# 	    position top
+#         font pango: Hack Regular Nerd Font Complete 11
+# }
 
 #############################
 ### settings for i3-gaps: ###
-#############################
+##````###########################
 
 # Set inner/outer gaps
-gaps inner 14
-gaps outer -2
+gaps inner 5
+gaps outer 2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
 # gaps inner all set 10
 # gaps outer all plus 5
 
+
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+#smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
@@ -260,6 +262,24 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-exec "xmodmap ~/.xmodmap"
-exec "setxkbmap -option 'ctrl:swapcaps'"
+set $Locker i3lock && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+0 mode "$mode_system"
+bindsym Print exec flameshot gui
+
+exec "setxkbmap -layout us,es -option 'ctrl:swapcaps, shift:both_capslock,  grp:win_space_toggle'; xmodmap -e 'keysym Alt_L = Shift_L'"
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'

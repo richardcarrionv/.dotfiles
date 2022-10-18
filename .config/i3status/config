@@ -9,6 +9,7 @@
 #
 
 general {
+    output_format = i3bar
     interval 		= 1
     colors 			= true
     color_good      = '#88b090'
@@ -16,7 +17,6 @@ general {
     color_bad       = '#e89393'
 }
 
-#order += "volume master"
 #order += "disk /home"
 #order += "run_watch DHCP"
 #order += "ipv6"
@@ -25,16 +25,17 @@ order += "wireless wlp7s0"
 order += "ethernet enp8s0"
 order += "battery 0"
 order += "cpu_usage 0"
-order += "cpu_temperature 0"
+#order += "cpu_temperature 0"
 order += "memory"
 #order += "load"
 order += "tztime local"
+order += "volume master"
 
 memory{ 
 format = "%used/%total"
 }
 wireless wlp7s0 {
-    format_up = "%quality  %essid %ipv4"
+    format_up = "%quality  %essid %ip"
     format_down = "down"
 }
 
@@ -90,8 +91,8 @@ disk "/" {
 }
 
 volume master {
-    format = "%volume  "
-    format_muted = " "
+    format = "%volume"
+    format_muted = ""
     device = "default"
     mixer = "Master"
     mixer_idx = 0

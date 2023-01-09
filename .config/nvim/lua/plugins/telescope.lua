@@ -1,6 +1,8 @@
 local telescope = require('telescope')
 local file_browser_actions = telescope.extensions.file_browser.actions
 
+--telescope.extensions.notify.notify()
+
 telescope.setup {
     defaults = {
 

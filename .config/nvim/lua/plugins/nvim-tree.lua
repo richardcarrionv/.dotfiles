@@ -1,4 +1,5 @@
 require("nvim-tree").setup({
+    sort_by = 'extension',
     hijack_cursor = true,
     sync_root_with_cwd = true,
     filters = {

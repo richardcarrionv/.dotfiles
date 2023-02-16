@@ -39,9 +39,9 @@ nmap("<leader>mj", "<C-w>J")
 ----------------------
 -- Terminal --
 ----------------------
-nmap("<leader>tt", ":tabnew | terminal powershell.exe<CR>i")
-nmap("<leader>ts", ":vsplit | terminal powershell.exe<CR>i")
-nmap("<leader>ti", ":split | terminal powershell.exe<CR>i")
+nmap("<leader>tt", ":tabnew | terminal <CR>i")
+nmap("<leader>ts", ":vsplit | terminal <CR>i")
+nmap("<leader>ti", ":split | terminal <CR>i")
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { silent = true })
 

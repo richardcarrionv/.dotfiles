@@ -13,7 +13,7 @@
 #Alt
 set $mod Mod1
 #Windows
-#set $mod Mod4
+set $mod Mod4
 set $browser google-chrome
 
 
@@ -285,6 +285,6 @@ mode "$mode_system" {
 bindsym $mod+0 mode "$mode_system"
 bindsym Print exec flameshot gui
 
-#exec "setxkbmap -layout us,es -option 'ctrl:swapcaps, shift:both_capslock,  grp:win_space_toggle'; xmodmap -e 'keysym Alt_L = Shift_L'"
-exec "setxkbmap -layout us,es -option 'ctrl:swapcaps, shift:both_capslock,  grp:win_space_toggle'"
+exec "setxkbmap -layout us,es -option 'ctrl:swapcaps, shift:both_capslock,  grp:win_space_toggle'; xmodmap -e 'keysym Alt_L = Shift_L'"
+#exec "setxkbmap -layout us,es -option 'ctrl:swapcaps, shift:both_capslock,  grp:win_space_toggle'"
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'

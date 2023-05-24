@@ -9,12 +9,16 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+
+#Alt
 set $mod Mod1
+#Windows
+#set $mod Mod4
 set $browser google-chrome
 
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 3
 default_floating_border normal
 hide_edge_borders none
 
@@ -43,7 +47,7 @@ exec --no-startup-id nm-applet
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id feh --bg-fill ~/Pictures/landscape.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/kanagawa.jpg
 
 # NetworkManager is the most popular way to manage wireless networks on Linux, and nm-applet is a desktop environment-independent system tray GUI for it. exec --no-startup-id nm-applet
 
@@ -173,16 +177,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym l resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
-        bindsym h resize grow width 10 px or 10 ppt
+        bindsym w resize shrink width 5 px or 5 ppt
+        bindsym Control+w resize grow width 5 px or 5 ppt
+        bindsym Control+h resize grow height 5 px or 5 ppt
+        bindsym h resize shrink height 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"

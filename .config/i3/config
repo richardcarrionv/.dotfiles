@@ -11,7 +11,7 @@
 #Alt
 set $mod Mod1
 #Windows
-set $mod Mod4
+#set $mod Mod4
 set $browser google-chrome
 
 
@@ -211,8 +211,8 @@ bindsym $mod+r mode "resize"
 ##````###########################
 
 # Set inner/outer gaps
-gaps inner 5
-gaps outer 1
+gaps inner 0
+gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -282,7 +282,8 @@ mode "$mode_system" {
 
 bindsym $mod+0 mode "$mode_system"
 bindsym Print exec flameshot gui
+bindsym $mod+Control+o exec "polybar-msg cmd toggle"
 
-exec "setxkbmap -layout us,es -option 'ctrl:swapcaps, shift:both_capslock,  grp:win_space_toggle'; xmodmap -e 'keysym Alt_L = Shift_L'"
+exec "setxkbmap -layout us,es -option 'ctrl:swapcaps, shift:both_capslock,  grp:win_space_toggle'; xmodmap -e 'keysym Super_L = Shift_L'"
 #exec "setxkbmap -layout us,es -option 'ctrl:swapcaps, shift:both_capslock,  grp:win_space_toggle'"
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'

@@ -296,3 +296,7 @@ bindsym Print exec flameshot gui
 bindsym $mod+Control+o exec "polybar-msg cmd toggle"
 
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
+bindsym $mod+Shift+w exec "/home/carri/.config/i3/i3-display-swap.sh"
+
+bindsym $mod+Ctrl+greater move workspace to output right
+bindsym $mod+Ctrl+less move workspace to output left

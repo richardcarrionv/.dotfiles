@@ -443,7 +443,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux"
+    - "tmux attach-session -t home || tmux new -s home"
 
 # Startup directory
 #

@@ -89,6 +89,8 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR="/usr/bin/nvim"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -101,8 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dotfiles='/usr/bin/git --git-dir=/home/carri/.dotfiles/ --work-tree=/home/carri'
-alias ls='ls -al'
-
 #
 # # vi mode
 # bindkey -v

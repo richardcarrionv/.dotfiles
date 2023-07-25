@@ -12,7 +12,7 @@
 set $mod Mod1
 #Windows
 #set $mod Mod4
-set $browser firefox
+set $browser google-chrome
 
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>

@@ -103,6 +103,7 @@ export EDITOR="/usr/bin/nvim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dotfiles='/usr/bin/git --git-dir=/home/carri/.dotfiles/ --work-tree=/home/carri'
+alias sp='source venv/bin/activate'
 #
 # # vi mode
 # bindkey -v

@@ -910,7 +910,7 @@ shell:
 # Kanagawa Alacritty Colors
 colors:
   primary:
-    background: "0x181616"
+    background: "0x000000"
     foreground: "0xdcd7ba"
 
   normal:

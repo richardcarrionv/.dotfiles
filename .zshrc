@@ -104,6 +104,7 @@ export EDITOR="/usr/bin/nvim"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dotfiles='/usr/bin/git --git-dir=/home/carri/.dotfiles/ --work-tree=/home/carri'
 alias sp='source venv/bin/activate'
+setopt nosharehistory
 #
 # # vi mode
 # bindkey -v

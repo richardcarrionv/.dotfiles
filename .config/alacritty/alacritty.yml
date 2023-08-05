@@ -443,7 +443,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach-session -t home || tmux new -s home"
+    - "tmux attach-session -t home || tmux new -s home -n 'zsh'"
 
 # Startup directory
 #

@@ -162,14 +162,14 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 
 
-bindsym $mod+Shift+d move container to workspace $ws1
-bindsym $mod+Shift+e move container to workspace $ws2
-bindsym $mod+Shift+s move container to workspace $ws3
-bindsym $mod+Shift+t move container to workspace $ws4
+bindsym $mod+Shift+a move container to workspace $ws1
+bindsym $mod+Shift+s move container to workspace $ws2
+bindsym $mod+Shift+d move container to workspace $ws3
+bindsym $mod+Shift+e move container to workspace $ws4
 bindsym $mod+Shift+g move container to workspace $ws5
 bindsym $mod+Shift+u move container to workspace $ws6
-bindsym $mod+Shift+o move container to workspace $ws7
-bindsym $mod+Shift+i move container to workspace $ws8
+bindsym $mod+Shift+i move container to workspace $ws7
+bindsym $mod+Shift+o move container to workspace $ws8
 bindsym $mod+Shift+m move container to workspace $ws9
 
 # reload the configuration file
@@ -306,26 +306,26 @@ bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
 
-bindsym $mod+e exec --no-startup-id $browser
+bindsym $mod+w exec --no-startup-id $browser
 bindsym $mod+z exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show drun"
 bindsym $mod+Shift+n layout stacking
 bindsym $mod+p layout toggle split
 
 # 1: documentation
 set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
-bindsym $mod+d workspace $ws1
-bindsym $mod+Control+d exec --no-startup-id  "i3-msg workspace 1; exec google-chrome --new-window $doc_pages"
+bindsym $mod+a workspace $ws1
+bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec google-chrome --new-window $doc_pages"
 
-# 2: code / work / development / edit
-bindsym $mod+w workspace $ws2
+# 2: search
+bindsym $mod+s workspace $ws2
+
+# 3: development
+bindsym $mod+d workspace $ws3
 bindsym $mod+Control+Return exec --no-startup-id "/home/carri/.config/i3/start-devenv.sh"
 
-# 3: search
-bindsym $mod+s workspace $ws3
-
-# 4: latex / tesis
-bindsym $mod+t workspace $ws4
-bindsym $mod+Control+t exec --no-startup-id  "i3-msg workspace 4; exec alacritty -e sh -C /home/carri/bin/.local/scripts/tesis-startup.sh"
+# 4: alternative development
+bindsym $mod+e workspace $ws4
+bindsym $mod+Control+e exec --no-startup-id  "i3-msg workspace 4; exec alacritty -e sh -C /home/carri/bin/.local/scripts/tesis-startup.sh"
 
 # 5: project managment
 bindsym $mod+g workspace $ws5
@@ -334,13 +334,14 @@ bindsym $mod+Control+g exec --no-startup-id  "i3-msg workspace 5; exec google-ch
 # 6: unknown
 bindsym $mod+u workspace $ws6
 
-# 7: social / messages
-set $social_pages https://web.whatsapp.com/ https://web.telegram.org/k/
-bindsym $mod+o workspace $ws7
-bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 7; exec google-chrome --new-window $social_pages"
+# 7: testing 
+bindsym $mod+i workspace $ws7
 
-# 8: testing 
-bindsym $mod+i workspace $ws8
+# 8: social / messages
+set $social_pages https://web.whatsapp.com/ https://web.telegram.org/k/
+bindsym $mod+o workspace $ws8
+bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 8; exec google-chrome --new-window $social_pages"
+
 
 # 9: music / enterteinment
 bindsym $mod+m workspace $ws9

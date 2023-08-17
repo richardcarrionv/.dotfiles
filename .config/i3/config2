@@ -115,16 +115,52 @@ bindsym $mod+space focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+set $ws1 "1 Doc"
+set $ws2 "2 Edi"
+set $ws3 "3 Sea"
+set $ws4 "4 Tes"
+set $ws5 "5 Gme"
+set $ws6 "6 Una"
+set $ws7 "7 Oci"
+set $ws8 "8 Ing"
+set $ws9 "9 Mus"
 set $ws10 "10"
+
+# 1: documentation
+set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
+bindsym $mod+d workspace number $ws1
+bindsym $mod+Control+d exec --no-startup-id  "i3-msg workspace 1 Doc; exec google-chrome --new-window $doc_pages"
+
+# 2: code / work / development / edit
+bindsym $mod+e workspace number $ws2
+bindsym $mod+Control+Return exec --no-startup-id "/home/carri/.config/i3/start-devenv.sh"
+
+# 3: search
+bindsym $mod+s workspace number $ws3
+
+# 4: latex / tesis
+bindsym $mod+t workspace number $ws4
+bindsym $mod+Control+t exec --no-startup-id  "i3-msg workspace 4 Tes; exec alacritty -e sh -C /home/carri/bin/.local/scripts/tesis-startup.sh"
+
+# 5: project managment
+bindsym $mod+g workspace number $ws5
+
+# 6: unassigned
+bindsym $mod+u workspace number $ws4
+
+# 7: social / messages
+set $social_pages https://web.whatsapp.com/ https://web.telegram.org/k/
+bindsym $mod+o workspace number $ws7
+bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace $ws7; exec google-chrome --new-window $social_pages"
+
+# 8: testing 
+bindsym $mod+i workspace number $ws8
+
+# 9: music / enterteinment
+bindsym $mod+m workspace number $ws9
+bindsym $mod+Control+m exec --no-startup-id  "i3-msg workspace $ws; exec google-chrome --new-window https://open.spotify.com/?"
+
+
 
 workspace $ws1 output HDMI-1-1
 workspace $ws2 output HDMI-1-1
@@ -138,39 +174,28 @@ workspace $ws8 output eDP-1
 workspace $ws9 output eDP-1
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
 
 bindsym $mod+Tab workspace next
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-
-
-bindsym $mod+Shift+d move container to workspace $ws1
-bindsym $mod+Shift+e move container to workspace $ws2
-bindsym $mod+Shift+s move container to workspace $ws3
-bindsym $mod+Shift+t move container to workspace $ws4
-bindsym $mod+Shift+g move container to workspace $ws5
-bindsym $mod+Shift+u move container to workspace $ws6
-bindsym $mod+Shift+o move container to workspace $ws7
-bindsym $mod+Shift+i move container to workspace $ws8
-bindsym $mod+Shift+m move container to workspace $ws9
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -244,7 +269,7 @@ smart_borders on
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-# bindsym $mod+Control+g mode "$mode_gaps"
+bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
@@ -295,54 +320,19 @@ mode "$mode_system" {
 
 bindsym $mod+0 mode "$mode_system"
 bindsym Print exec flameshot gui
-bindsym $mod+Control+w exec "polybar-msg cmd toggle"
+bindsym $mod+Shift+o exec "polybar-msg cmd toggle"
 
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
 bindsym $mod+Shift+w exec "/home/carri/.config/i3/i3-display-swap.sh"
 
-# bindsym $mod+Shift+u exec "setxkbmap us"
-# bindsym $mod+Shift+e exec "setxkbmap es"
+bindsym $mod+Shift+u exec "setxkbmap us"
+bindsym $mod+Shift+e exec "setxkbmap es"
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
 
-bindsym $mod+w exec --no-startup-id $browser
+bindsym $mod+Control+w exec --no-startup-id $browser
 bindsym $mod+z exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show drun"
-bindsym $mod+Shift+n layout stacking
+bindsym $mod+Shift+s layout stacking
 bindsym $mod+p layout toggle split
-
-# 1: documentation
-set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
-bindsym $mod+d workspace $ws1
-bindsym $mod+Control+d exec --no-startup-id  "i3-msg workspace 1; exec google-chrome --new-window $doc_pages"
-
-# 2: code / work / development / edit
-bindsym $mod+e workspace $ws2
-bindsym $mod+Control+Return exec --no-startup-id "/home/carri/.config/i3/start-devenv.sh"
-
-# 3: search
-bindsym $mod+s workspace $ws3
-
-# 4: latex / tesis
-bindsym $mod+t workspace $ws4
-bindsym $mod+Control+t exec --no-startup-id  "i3-msg workspace 4; exec alacritty -e sh -C /home/carri/bin/.local/scripts/tesis-startup.sh"
-
-# 5: project managment
-bindsym $mod+g workspace $ws5
-bindsym $mod+Control+g exec --no-startup-id  "i3-msg workspace 5; exec google-chrome --new-window https://linear.app"
-
-# 6: unknown
-bindsym $mod+u workspace $ws6
-
-# 7: social / messages
-set $social_pages https://web.whatsapp.com/ https://web.telegram.org/k/
-bindsym $mod+o workspace $ws7
-bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 7; exec google-chrome --new-window $social_pages"
-
-# 8: testing 
-bindsym $mod+i workspace $ws8
-
-# 9: music / enterteinment
-bindsym $mod+m workspace $ws9
-bindsym $mod+Control+m exec --no-startup-id  "i3-msg workspace 9; exec google-chrome --new-window https://open.spotify.com/?"
 

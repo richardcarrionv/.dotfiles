@@ -302,3 +302,4 @@ bindsym $mod+Shift+e exec "setxkbmap us"
 bindsym $mod+Shift+s exec "setxkbmap es"
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
+bindsym $mod+Shift+d exec --no-startup-id "/home/carri/.config/i3/start-devenv.sh"

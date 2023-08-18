@@ -95,7 +95,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+semicolon split h
+bindsym $mod+Control+semicolon split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -134,41 +134,73 @@ workspace $ws6 output eDP-1
 workspace $ws7 output eDP-1
 workspace $ws8 output eDP-1
 workspace $ws9 output eDP-1
+workspace $ws10 output eDP-1
 
-# switch to workspace
+bindsym $mod+Tab workspace next
+
+
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
+
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
+bindsym $mod+Control+1 workspace $ws10
 
-bindsym $mod+Tab workspace next
 
-# move focused container to workspace
+bindsym $mod+a workspace $ws1
+bindsym $mod+s workspace $ws2
+bindsym $mod+d workspace $ws3
+bindsym $mod+f workspace $ws4
+bindsym $mod+g workspace $ws5
+
+bindsym $mod+u workspace $ws6
+bindsym $mod+i workspace $ws7
+bindsym $mod+o workspace $ws8
+bindsym $mod+p workspace $ws9
+bindsym $mod+semicolon workspace $ws10
+
+# 1: documentation
+set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
+bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec google-chrome --new-window $doc_pages"
+# 3: alternative development
+bindsym $mod+Control+d exec --no-startup-id  "i3-msg workspace 3; exec alacritty -e sh -C /home/carri/bin/.local/scripts/tesis-startup.sh"
+# 4: development
+bindsym $mod+Control+Return exec --no-startup-id "/home/carri/.config/i3/start-devenv.sh"
+# 5: project managment
+bindsym $mod+Control+g exec --no-startup-id  "i3-msg workspace 5; exec google-chrome --new-window https://linear.app"
+# 8: social / messages
+set $social_pages https://web.whatsapp.com/ https://web.telegram.org/k/
+bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 8; exec google-chrome --new-window $social_pages"
+# 9: music / enterteinment
+bindsym $mod+Control+p exec --no-startup-id  "i3-msg workspace 9; exec google-chrome --new-window https://open.spotify.com/?"
+
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
+
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 
-
 bindsym $mod+Shift+a move container to workspace $ws1
 bindsym $mod+Shift+s move container to workspace $ws2
 bindsym $mod+Shift+d move container to workspace $ws3
-bindsym $mod+Shift+e move container to workspace $ws4
+bindsym $mod+Shift+f move container to workspace $ws4
 bindsym $mod+Shift+g move container to workspace $ws5
+
 bindsym $mod+Shift+u move container to workspace $ws6
 bindsym $mod+Shift+i move container to workspace $ws7
 bindsym $mod+Shift+o move container to workspace $ws8
-bindsym $mod+Shift+m move container to workspace $ws9
+bindsym $mod+Shift+p move container to workspace $ws9
+bindsym $mod+Shift+semicolon move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -296,7 +328,7 @@ bindsym Print exec flameshot gui
 
 
 bindsym $mod+z fullscreen toggle
-bindsym $mod+f exec "polybar-msg cmd toggle"
+bindsym $mod+Control+f exec "polybar-msg cmd toggle"
 
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
 bindsym $mod+Shift+w exec "/home/carri/.config/i3/i3-display-swap.sh"
@@ -310,41 +342,4 @@ bindsym $mod+Ctrl+less move workspace to output left
 bindsym $mod+w exec --no-startup-id $browser
 bindsym $mod+x exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show drun"
 bindsym $mod+Shift+n layout stacking
-bindsym $mod+p layout toggle split
-
-# 1: documentation
-set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
-bindsym $mod+a workspace $ws1
-bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec google-chrome --new-window $doc_pages"
-
-# 2: search
-bindsym $mod+s workspace $ws2
-
-# 3: development
-bindsym $mod+d workspace $ws3
-bindsym $mod+Control+Return exec --no-startup-id "/home/carri/.config/i3/start-devenv.sh"
-
-# 4: alternative development
-bindsym $mod+e workspace $ws4
-bindsym $mod+Control+e exec --no-startup-id  "i3-msg workspace 4; exec alacritty -e sh -C /home/carri/bin/.local/scripts/tesis-startup.sh"
-
-# 5: project managment
-bindsym $mod+g workspace $ws5
-bindsym $mod+Control+g exec --no-startup-id  "i3-msg workspace 5; exec google-chrome --new-window https://linear.app"
-
-# 6: unknown
-bindsym $mod+u workspace $ws6
-
-# 7: testing 
-bindsym $mod+i workspace $ws7
-
-# 8: social / messages
-set $social_pages https://web.whatsapp.com/ https://web.telegram.org/k/
-bindsym $mod+o workspace $ws8
-bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 8; exec google-chrome --new-window $social_pages"
-
-
-# 9: music / enterteinment
-bindsym $mod+m workspace $ws9
-bindsym $mod+Control+m exec --no-startup-id  "i3-msg workspace 9; exec google-chrome --new-window https://open.spotify.com/?"
-
+bindsym $mod+m layout toggle split

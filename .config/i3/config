@@ -168,7 +168,7 @@ bindsym $mod+semicolon workspace $ws10
 set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
 bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec google-chrome --new-window $doc_pages"
 # 3: alternative development
-bindsym $mod+Control+d exec --no-startup-id  "i3-msg workspace 3; exec alacritty -e sh -C /home/carri/bin/.local/scripts/tesis-startup.sh"
+bindsym $mod+Control+d exec --no-startup-id "/home/carri/.config/i3/start-tesis.sh"
 bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec google-chrome --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
 # 4: development
 bindsym $mod+Control+Return exec --no-startup-id "/home/carri/.config/i3/start-devenv.sh"
@@ -330,6 +330,7 @@ bindsym Print exec flameshot gui
 
 bindsym $mod+z fullscreen toggle
 bindsym $mod+Control+f exec "polybar-msg cmd toggle"
+bindsym $mod+Control+w exec "/home/carri/bin/rofi-wifi-menu.sh"
 
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
 bindsym $mod+Shift+w exec "/home/carri/.config/i3/i3-display-swap.sh"

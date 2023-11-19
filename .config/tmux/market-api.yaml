@@ -1,0 +1,12 @@
+session_name: api
+start_directory: /home/carri/workspace/market-api/
+windows:
+  - window_name: neovim
+    panes:
+      - shell_command: sp && nvim .
+  - window_name: docker
+    panes:
+      - shell_command: docker compose up
+  - window_name: psql
+    panes:
+      - shell_command: psql -h localhost -U admin market

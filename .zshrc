@@ -4,6 +4,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/carri/.local/bin
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export DISABLE_AUTO_TITLE='true'
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -138,3 +140,7 @@ setopt nosharehistory
 # zle -N zle-line-init
 # echo -ne '\e[5 q' # Use beam shape cursor on startup.
 # preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

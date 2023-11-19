@@ -1,0 +1,9 @@
+session_name: frontend
+start_directory: /home/carri/workspace/market/
+windows:
+  - window_name: neovim
+    panes:
+      - shell_command: nvim .
+  - window_name: vite
+    panes:
+      - shell_command: yarn dev

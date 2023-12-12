@@ -3,6 +3,7 @@
 # Terminate already running bar instances
 # If all your bars have ipc enabled, you can use 
 polybar-msg cmd quit
+setxkbmap -layout us,es
 # Otherwise you can use the nuclear option:
 # killall -q polybar
 

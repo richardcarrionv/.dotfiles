@@ -178,7 +178,8 @@ bindsym $mod+Control+g exec --no-startup-id  "i3-msg workspace 5; exec google-ch
 set $social_pages https://web.whatsapp.com/ https://web.telegram.org/k/
 bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 8; exec google-chrome --new-window $social_pages"
 # 9: music / enterteinment
-bindsym $mod+Control+p exec --no-startup-id  "i3-msg workspace 9; exec google-chrome --new-window https://open.spotify.com/?"
+bindsym $mod+Control+p exec --no-startup-id  "i3-msg workspace 9; exec spotify"
+
 
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -335,15 +336,15 @@ bindsym $mod+Control+w exec "/home/carri/bin/rofi-wifi-menu.sh"
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
 bindsym $mod+Shift+w exec "/home/carri/.config/i3/i3-display-swap.sh"
 
-# bindsym $mod+Shift+u exec "setxkbmap us"
-# bindsym $mod+Shift+e exec "setxkbmap es"
+bindsym $mod+Shift+n exec "setxkbmap us"
+bindsym $mod+Shift+e exec "setxkbmap es"
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 
 
 bindsym $mod+w exec --no-startup-id $browser
 bindsym $mod+x exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show drun"
-bindsym $mod+Shift+n layout stacking
+# bindsym $mod+Shift+n layout stacking
 bindsym $mod+m layout toggle split
 bindsym $mod+r exec --no-startup-id alacritty -e "ranger"
 

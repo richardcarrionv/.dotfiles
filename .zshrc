@@ -76,7 +76,7 @@ plugins=(git)
 plugins+=(zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-
+source "$HOME/.cargo/env"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

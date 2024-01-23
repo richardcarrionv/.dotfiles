@@ -12,9 +12,9 @@
 # local bangs = ":silent! %s/!!/¡/g<CR>";
 matches:
   # Simple text replacement
-  - trigger: "??"
+  - trigger: "\\?"
     replace: "¿"
-  - trigger: "!!"
+  - trigger: "\\!"
     replace: "¡"
   - trigger: ":'n"
     replace: "ñ"

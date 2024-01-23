@@ -38,3 +38,8 @@
 # clipboard_threshold: 100
 
 # For a list of all the available options, visit the official docs at: https://espanso.org/docs/
+# backend: Clipboard
+disable_x11_fast_inject: true
+# inject_delay: 1 
+# key_delay: 1
+

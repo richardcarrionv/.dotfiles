@@ -103,6 +103,7 @@ bindsym $mod+v split v
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+b layout tabbed
+bindsym $mod+t layout stacked
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -261,6 +262,16 @@ mode "(a: docs) (s: search) (d: dev) (f: fterminal) (g) (m: more) (i: test) (o: 
 
 bindsym $mod+Control+m mode "(a: docs) (s: search) (d: dev) (f: fterminal) (g) (m: more) (i: test) (o: social) (p: play)"
 
+bindsym $mod+Shift+a move container to workspace $ws1
+bindsym $mod+Shift+s move container to workspace $ws2
+bindsym $mod+Shift+d move container to workspace $ws3
+bindsym $mod+Shift+f move container to workspace $ws4
+bindsym $mod+Shift+g move container to workspace $ws5
+bindsym $mod+Shift+m move container to workspace $ws6
+bindsym $mod+Shift+i move container to workspace $ws7
+bindsym $mod+Shift+o move container to workspace $ws8
+bindsym $mod+Shift+p move container to workspace $ws9
+bindsym $mod+Shift+semicolon move container to workspace $ws10
 
 #
 # bindsym Return mode "default"
@@ -361,10 +372,11 @@ bindsym Print exec flameshot gui
 
 bindsym $mod+z fullscreen toggle
 bindsym $mod+Control+f exec "polybar-msg cmd toggle"
-bindsym $mod+Control+w exec "/home/carri/bin/rofi-wifi-menu.sh"
+# bindsym $mod+Control+w exec "/home/carri/bin/rofi-wifi-menu.sh"
 
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
-bindsym $mod+Shift+w exec "/home/carri/.config/i3/i3-display-swap.sh"
+bindsym $mod+Control+w exec "/home/carri/.config/i3/i3-display-swap.sh"
+bindsym $mod+Shift+w exec --no-startup-id "rofi -show-icons -modi window -show window"
 
 bindsym $mod+Shift+n exec "setxkbmap us"
 bindsym $mod+Shift+e exec "setxkbmap es"
@@ -374,8 +386,8 @@ bindsym $mod+Ctrl+less move workspace to output left
 
 bindsym $mod+w exec --no-startup-id $browser
 bindsym $mod+x exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show drun"
+
 # bindsym $mod+Shift+n layout stacking
 bindsym $mod+u layout toggle split
 bindsym $mod+r exec --no-startup-id alacritty -e "ranger"
-bindsym $mod+t exec --no-startup-id alacritty -e "ranger ~/Documents/tesis/ejemplost-tesis"
 

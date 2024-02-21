@@ -2,8 +2,21 @@
 
 ## Dependencies
 ```
-alacritty tmux neovim polybar rofi
+alacritty tmux neovim polybar rofi i3 zsh fzf
 ```
+## Installation
+
+```
+alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+git clone --bare <git-repo-url> $HOME/.dotfiles
+dots checkout
+alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+```
+
+### Additional
+- oh-my-zsh
+- zsh-vi-mode
+- tpm
 
 ## Natural Scrolling & Tapping
 sudo nvim /usr/share/X11/xorg.conf.d/40-libinput.conf

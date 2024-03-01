@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias dots="/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME"
+alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias sp="source venv/bin/activate"
 alias dev="/home/carri/.config/i3/start-devenv.sh"
 

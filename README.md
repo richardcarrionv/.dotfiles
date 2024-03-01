@@ -11,6 +11,7 @@ alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 git clone --bare https://github.com/noesrichard/.dotfiles.git $HOME/.dotfiles
 dots checkout
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dots config --local status.showUntrackedFiles no
 ```
 
 ### Additional

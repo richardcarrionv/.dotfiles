@@ -4,6 +4,8 @@
 ```
 alacritty tmux neovim polybar rofi i3 zsh fzf feh
 ```
+- Espanso
+
 ## Installation
 
 ```
@@ -18,6 +20,7 @@ dots config --local status.showUntrackedFiles no
 - oh-my-zsh
 - zsh-vi-mode
 - tpm
+- jq 
 
 ## Natural Scrolling & Tapping
 sudo nvim /usr/share/X11/xorg.conf.d/40-libinput.conf

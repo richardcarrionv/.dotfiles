@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -106,5 +106,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias sp="source venv/bin/activate"
+alias psh="pipenv shell"
 alias dev="/home/carri/.config/i3/start-devenv.sh"
 

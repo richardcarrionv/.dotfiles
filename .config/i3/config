@@ -45,7 +45,7 @@ exec --no-startup-id nm-applet
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id feh --bg-fill ~/Pictures/abstract.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # NetworkManager is the most popular way to manage wireless networks on Linux, and nm-applet is a desktop environment-independent system tray GUI for it. exec --no-startup-id nm-applet
 
@@ -140,17 +140,17 @@ workspace $ws10 output eDP-1
 bindsym $mod+Tab workspace next
 
 
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+Control+1 workspace $ws10
+# bindsym $mod+1 workspace $ws1
+# bindsym $mod+2 workspace $ws2
+# bindsym $mod+3 workspace $ws3
+# bindsym $mod+4 workspace $ws4
+# bindsym $mod+5 workspace $ws5
+#
+# bindsym $mod+6 workspace $ws6
+# bindsym $mod+7 workspace $ws7
+# bindsym $mod+8 workspace $ws8
+# bindsym $mod+9 workspace $ws9
+# bindsym $mod+Control+1 workspace $ws10
 
 
 bindsym $mod+a workspace $ws1

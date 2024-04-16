@@ -41,7 +41,7 @@ TERM = "xterm-256color"
 size = 9.5
 
 [font.normal]
-family = "JetBrainsMono NF"
+family = "Hack Nerd Font Mono"
 style = "Regular"
 
 [shell]

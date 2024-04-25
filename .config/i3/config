@@ -12,7 +12,7 @@
 set $mod Mod1
 #Windows
 #set $mod Mod4
-set $browser google-chrome
+set $browser brave-browser
 
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
@@ -166,17 +166,17 @@ bindsym $mod+semicolon workspace $ws10
 
 # 1: documentation
 set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
-bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec google-chrome --new-window $doc_pages"
+bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec $browser --new-window $doc_pages"
 # 3: alternative development
 bindsym $mod+Control+d exec --no-startup-id "/home/carri/.config/i3/start-tesis.sh"
-bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec google-chrome --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
+bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec $browser --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
 # 4: development
 bindsym $mod+Control+Return exec --no-startup-id "/home/carri/.config/i3/start-devenv.sh"
 # 5: project managment
-bindsym $mod+Control+g exec --no-startup-id  "i3-msg workspace 5; exec google-chrome --new-window https://linear.app"
+bindsym $mod+Control+g exec --no-startup-id  "i3-msg workspace 5; exec $browser --new-window https://linear.app"
 # 8: social / messages
-set $social_pages https://web.whatsapp.com/ https://web.telegram.org/k/
-bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 8; exec google-chrome --new-window $social_pages"
+set $social_pages https://web.whatsapp.com/
+bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 8; exec $browser --new-window $social_pages"
 # 9: music / enterteinment
 bindsym $mod+Control+p exec --no-startup-id  "i3-msg workspace 9; exec spotify"
 

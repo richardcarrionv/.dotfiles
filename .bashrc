@@ -13,3 +13,4 @@ export EDITOR="/usr/bin/nvim"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+. "$HOME/.cargo/env"

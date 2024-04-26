@@ -47,6 +47,8 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 export TPM_HOME="$XDG_DATA_HOME"/tpm
+
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 # export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 #
 #
@@ -79,7 +81,7 @@ export BROWSER="brave-browser"
 # 	"$XDG_DATA_HOME/npm/bin" "$HOME/.local/bin" "$path[@]")
 
 path=("$HOME/.local/bin" "$path[@]")
-# export PATH
+export PATH
 #
 # export LF_ICONS="\
 # di=:\

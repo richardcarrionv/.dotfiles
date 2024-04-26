@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>package-x-generic</icon>
+	<name>Unzip</name>
+	<submenu></submenu>
+	<unique-id>1714149925046475-1</unique-id>
+	<command>unzip %n -d $(basename %n .zip)</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.zip</patterns>
+	<other-files/>
+</action>
+</actions>

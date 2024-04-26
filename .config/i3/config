@@ -378,7 +378,7 @@ exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
 bindsym $mod+Control+w exec "i3-display-swap.sh"
 bindsym $mod+Shift+w exec --no-startup-id "rofi -show-icons -modi window -show window"
 
-bindsym $mod+t exec "thunar $HOME"
+bindsym $mod+t exec "thunar-rofi-opener.sh"
 
 bindsym $mod+Shift+n exec "setxkbmap us"
 bindsym $mod+Shift+e exec "setxkbmap es"

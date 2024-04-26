@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 selected_name="home"
 tmux_running=$(pgrep tmux)
 

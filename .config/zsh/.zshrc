@@ -107,3 +107,4 @@ alias psh="pipenv shell"
 # alias dev="/home/carri/.config/i3/start-devenv.sh"
 alias srczsh="source $ZDOTDIR/.zshrc"
 alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
+alias code='code --extensions-dir=$XDG_DATA_HOME/vscode/extensions/ --user-data-dir=$XDG_DATA_HOME/vscode/user-data/'

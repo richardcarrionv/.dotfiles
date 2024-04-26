@@ -45,6 +45,8 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 export SNAP_USER_DATA="$XDG_DATA_HOME"/snap
 
+export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
+
 # export GEM_PATH="$XDG_DATA_HOME/ruby/gems"
 # export GEM_SPEC_CACHE="$XDG_DATA_HOME/ruby/specs"
 # export GEM_HOME="$XDG_DATA_HOME/ruby/gems"

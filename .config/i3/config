@@ -102,7 +102,7 @@ bindsym $mod+Control+semicolon split h
 
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+e layout tabbed
+bindsym $mod+Shift+e layout tabbed
 bindsym $mod+Shift+t layout stacked
 
 # toggle tiling / floating
@@ -198,7 +198,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
 # resize window (you can also use the mouse for that)
@@ -378,10 +377,11 @@ exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
 bindsym $mod+Control+w exec "i3-display-swap.sh"
 bindsym $mod+Shift+w exec --no-startup-id "rofi -show-icons -modi window -show window"
 
-bindsym $mod+t exec "thunar-rofi-opener.sh"
+bindsym $mod+e exec "thunar-rofi-opener.sh"
 
-bindsym $mod+Shift+n exec "setxkbmap us"
-bindsym $mod+Shift+e exec "setxkbmap es"
+# TODO
+# bindsym $mod+Shift+n exec "setxkbmap us"
+# bindsym $mod+Shift+e exec "setxkbmap es"
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
 

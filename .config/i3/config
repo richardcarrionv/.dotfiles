@@ -168,10 +168,10 @@ bindsym $mod+semicolon workspace $ws10
 set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
 bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec $browser --new-window $doc_pages"
 # 3: alternative development
-bindsym $mod+Control+d exec --no-startup-id "/home/carri/.config/i3/start-tesis.sh"
+bindsym $mod+Control+d exec --no-startup-id "start-tesis.sh"
 bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec $browser --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
 # 4: development
-bindsym $mod+Control+Return exec --no-startup-id "/home/carri/.config/i3/start-devenv.sh"
+bindsym $mod+Control+Return exec --no-startup-id "start-devenv.sh"
 # 5: project managment
 bindsym $mod+Control+g exec --no-startup-id  "i3-msg workspace 5; exec $browser --new-window https://linear.app"
 # 8: social / messages
@@ -375,7 +375,7 @@ bindsym $mod+Control+f exec "polybar-msg cmd toggle"
 # bindsym $mod+Control+w exec "/home/carri/bin/rofi-wifi-menu.sh"
 
 exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
-bindsym $mod+Control+w exec "/home/carri/.config/i3/i3-display-swap.sh"
+bindsym $mod+Control+w exec "i3-display-swap.sh"
 bindsym $mod+Shift+w exec --no-startup-id "rofi -show-icons -modi window -show window"
 
 bindsym $mod+Shift+n exec "setxkbmap us"

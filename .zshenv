@@ -264,3 +264,4 @@ path=("$HOME/.local/bin" "$path[@]")
 # export LESS_TERMCAP_ue=$(tput sgr0)
 # # End bold, blinking, standout, underline
 # export LESS_TERMCAP_me=$(tput sgr0)
+. "/home/carri/.local/share/cargo/env"

@@ -73,6 +73,8 @@ export BROWSER="brave-browser"
 # 	"$HOME/scripts/polybar" "$HOME/scripts/bspwm" "$HOME/scripts/lemonbar" "$HOME/scripts/transmission"
 # 	"$HOME/bin/tweetdeck-linux-x64" "$XDG_DATA_HOME/ruby/gems/bin" "$HOME/go/bin" "$HOME/.local/share/cargo/bin"
 # 	"$XDG_DATA_HOME/npm/bin" "$HOME/.local/bin" "$path[@]")
+
+path=("$HOME/.local/bin" "$path[@]")
 # export PATH
 #
 # export LF_ICONS="\

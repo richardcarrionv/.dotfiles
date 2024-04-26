@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/.local/bin ~/dev/ps ~/dev/wk ~/dev/ck -mindepth 0 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

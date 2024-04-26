@@ -52,6 +52,7 @@ export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
 
 export DOCKER_USER_VOLUMES="$XDG_DATA_HOME"/docker/volumes
 
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc":"$XDG_CONFIG_HOME/gtk-2.0/gtkrc.mine"
 
 # export GEM_PATH="$XDG_DATA_HOME/ruby/gems"
 # export GEM_SPEC_CACHE="$XDG_DATA_HOME/ruby/specs"

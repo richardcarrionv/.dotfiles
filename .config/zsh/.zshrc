@@ -104,5 +104,5 @@ source $ZSH/oh-my-zsh.sh
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias sp="source venv/bin/activate"
 alias psh="pipenv shell"
-alias dev="/home/carri/.config/i3/start-devenv.sh"
+# alias dev="/home/carri/.config/i3/start-devenv.sh"
 alias srczsh="source $ZDOTDIR/.zshrc"

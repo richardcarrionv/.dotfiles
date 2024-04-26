@@ -32,19 +32,23 @@ export XDG_PICTURES_DIR=${XDG_PICTURES_DIR:="$HOME/picures"}
 # # Fixing Paths
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
-export GEM_PATH="$XDG_DATA_HOME/ruby/gems"
-export GEM_SPEC_CACHE="$XDG_DATA_HOME/ruby/specs"
-export GEM_HOME="$XDG_DATA_HOME/ruby/gems"
+# export GEM_PATH="$XDG_DATA_HOME/ruby/gems"
+# export GEM_SPEC_CACHE="$XDG_DATA_HOME/ruby/specs"
+# export GEM_HOME="$XDG_DATA_HOME/ruby/gems"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export GOPATH="$XDG_DATA_HOME"/go
+# export GOPATH="$XDG_DATA_HOME"/go
 # export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 # export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+# export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export ZDOTDIR=$HOME/.config/zsh
 export ZSH_CUSTOM=$HOME/.config/zsh/custom
 export HISTFILE="$XDG_DATA_HOME"/zsh/history
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+export TPM_HOME="$XDG_DATA_HOME"/tpm
+# export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
+#
 #
 # # Scaling
 # export QT_AUTO_SCREEN_SCALE_FACTOR=0

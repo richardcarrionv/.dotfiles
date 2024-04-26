@@ -7,18 +7,14 @@ alacritty tmux neovim polybar rofi i3 zsh fzf feh
 - Espanso
 
 ## Installation
-
 ```
-alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dots='/usr/bin/git --git-dir=$HOME/dev/.dotfiles/ --work-tree=$HOME'
 ```
 ```
-git clone --bare https://github.com/noesrichard/.dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/richardcarrionv/.dotfiles.git $HOME/dev/.dotfiles
 ```
 ```
 dots checkout
-```
-```
-alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 ```
 dots config --local status.showUntrackedFiles no

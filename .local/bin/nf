@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+if [[ "$2" == "" ]]; then
+  depth="-maxdepth 3"
+else
+  depth="-maxdepth $2"
+fi
+
+
+if [[ "$1" == "" ]]; then
+  pwd=$HOME
+  dir="$HOME/.config $HOME/.local/bin $HOME/dev"
+else
+  pwd=$(pwd)
+  dir=$pwd/$1
+fi
+
+file="$(\
+  find  $dir $depth -type f |\
+  sed "s|^$pwd/||" |\
+  fzf --preview 'bat --color=always {}'\
+  )"
+
+if [[ "$file" == "" ]]; then
+  exit 0;
+fi
+
+
+echo $pwd/$file
+nvim $pwd/$file

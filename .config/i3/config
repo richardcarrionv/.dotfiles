@@ -63,7 +63,9 @@ bindsym XF86MonBrightnessDown exec "brightnessctl s 2%-"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty -e tmux attach-session -t home || tmux new -s home -n 'zsh'
+bindsym $mod+Shift+Return exec alacritty 
+
 
 # kill focused window
 bindsym $mod+Shift+q kill

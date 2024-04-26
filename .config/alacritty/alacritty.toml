@@ -45,5 +45,5 @@ family = "Hack Nerd Font Mono"
 style = "Regular"
 
 [shell]
-args = ["-l", "-c", "tmux attach-session -t home || tmux new -s home -n 'zsh'"]
+# args = ["-l", "-c", "tmux attach-session -t home || tmux new -s home -n 'zsh'"]
 program = "/bin/zsh"

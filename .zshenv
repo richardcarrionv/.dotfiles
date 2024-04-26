@@ -10,7 +10,22 @@ export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 export XDG_PICTURES_DIR=${XDG_PICTURES_DIR:="$HOME/picures"}
-#export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
+export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
+
+export XDG_DESKTOP_DIR="$HOME/desktop"
+export XDG_DOCUMENTS_DIR="$HOME/docs"
+export XDG_DOWNLOAD_DIR="$HOME/downloads"
+export XDG_MUSIC_DIR="$HOME/music"
+export XDG_PICTURES_DIR="$HOME/pictures"
+export XDG_PUBLICSHARE_DIR="$HOME/public"
+export XDG_TEMPLATES_DIR="$HOME/templates"
+export XDG_VIDEOS_DIR="$HOME/videos"
+
+export DEV_DIR="$HOME/dev" 
+export DEV_PROJECTS_DIR="$HOME/dev/prj" 
+export DEV_WORK_DIR="$HOME/dev/wrk" 
+export DEV_CHECKOUT_DIR="$HOME/dev/chk" 
+
 
 # # QT5 Fix
 # export QT_QPA_PLATFORMTHEME="qt5ct"
@@ -42,13 +57,15 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export ZDOTDIR=$HOME/.config/zsh
 export ZSH_CUSTOM=$HOME/.config/zsh/custom
-export HISTFILE="$XDG_DATA_HOME"/zsh/history
+export HISTFILE="$XDG_DATA_HOME"/zsh/hist
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 export TPM_HOME="$XDG_DATA_HOME"/tpm
 
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+
+export SNAP_USER_DATA="$XDG_DATA_HOME"/snap
 # export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 #
 #
@@ -80,7 +97,7 @@ export BROWSER="brave-browser"
 # 	"$HOME/bin/tweetdeck-linux-x64" "$XDG_DATA_HOME/ruby/gems/bin" "$HOME/go/bin" "$HOME/.local/share/cargo/bin"
 # 	"$XDG_DATA_HOME/npm/bin" "$HOME/.local/bin" "$path[@]")
 
-path=("$HOME/.local/bin" "$path[@]")
+path=("$HOME/.local/bin" "$HOME/bin" "$path[@]")
 export PATH
 #
 # export LF_ICONS="\

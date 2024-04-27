@@ -12,11 +12,13 @@ fi
 
 if [[ "$selected_directory" == "/home/carri" ]]; then
   thunar $HOME
+  i3-msg workspace 10
   exit 0;
 fi
 
 if [[ -d "$HOME/$selected_directory" ]]; then
     thunar "$HOME/$selected_directory"
+    i3-msg workspace 10
 else
     echo "Directory does not exist: $selected_directory"
 fi

@@ -1,0 +1,101 @@
+/*******************************************************************************
+ * MACOS SPOTLIGHT LIKE DARK THEME FOR ROFI 
+ * User                 : LR-Tech               
+ * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
+ *******************************************************************************/
+
+* {
+    font:   "Montserrat 12";
+
+    bg0:    #0a0a0a;
+    bg1:    #7E7E7E80;
+    bg2:    #9ccfd8;
+
+    fg0:    #ffffff;
+    fg1:    #000000;
+    fg2:    #ffffff;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    background-color:   @bg0;
+    /*border: 1px solid; 
+    border-color: #3e8fb0; */
+
+    location:       center;
+    width:          640;
+}
+
+inputbar {
+    font:       "Montserrat 12";
+    padding:    12px;
+    spacing:    12px;
+    children:   [ entry ];
+}
+
+icon-search {
+    expand:     false;
+    filename:   "search";
+    size: 1em;
+}
+
+prompt, icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+
+entry {
+    font:   inherit;
+    margin: 5px;
+    placeholder-color   : @fg2;
+}
+
+message {
+    border:             0px 0 0;
+    border-color:       @bg0;
+    background-color:   @bg0;
+}
+
+textbox {
+    padding:    8px 24px;
+}
+
+listview {
+    lines:      10;
+    columns:    1;
+
+    fixed-height:   false;
+    border:         1px 0 0;
+    border-color:   #ffffff;
+}
+
+element {
+    padding:            8px 16px;
+    spacing:            16px;
+    background-color:   transparent;
+}
+
+element normal active {
+    text-color: @bg2;
+    font-weight: bold;
+}
+
+element selected normal, element selected active {
+    background-color:   @bg2;
+    text-color:         @fg1;
+    font-weight: bold;
+}
+
+element-icon {
+    size:   1em;
+}
+
+element-text {
+    text-color: inherit;
+}

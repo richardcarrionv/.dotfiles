@@ -1,24 +1,38 @@
 #!/usr/bin/env bash
+#
+dirs="$HOME/.config $HOME/.local/bin $HOME/dev"
+max_depth=""
+min_depth=""
+window_name='neovim'
 
-if [[ "$2" == "" ]]; then
-  depth=""
-else
-  depth="-maxdepth $2"
-fi
-
-
-if [[ "$1" == "" ]]; then
-  pwd=$HOME
-  dir="$HOME/.config $HOME/.local/bin $HOME/dev"
-else
-  pwd=$(pwd)
-  dir=$pwd/$1
-fi
+while getopts ":d:M:m:n:" opt; do
+  case ${opt} in
+    d ) # Set custom directories
+        dirs=$OPTARG
+        ;;
+    M ) # Set max depth
+        max_depth="-maxdepth $OPTARG"
+        ;;
+    m ) # Set max depth
+        min_depth="-mindepth $OPTARG"
+        ;;
+    n ) # Set custom window name
+        window_name=$OPTARG
+        ;;
+    \? ) echo "Usage: $(basename $0) [-d <directory>] [-M <maxdepth>] [-m <mindepth>] [-n <window_name>]"
+         exit 1
+        ;;
+  esac
+done
+shift $((OPTIND -1))
 
 file="$(\
-  find  $dir $depth -type f |\
-  sed "s|^$pwd/||" |\
-  fzf --preview 'bat --color=always {}'\
+  find  $dirs $min_depth $max_depth \
+  -not -path "*\.git*" \
+  -not -path "*.png" \
+  -not -path "*.jpeg" \
+  -type f |\
+  fzf \
   )"
 
 if [[ "$file" == "" ]]; then
@@ -26,5 +40,4 @@ if [[ "$file" == "" ]]; then
 fi
 
 
-echo $pwd/$file
-nvim $pwd/$file
+nvim $file

@@ -63,8 +63,10 @@ bindsym XF86MonBrightnessDown exec "brightnessctl s 2%-"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e tmux attach-session -t home || tmux new -s home -n 'zsh'
-bindsym $mod+Shift+Return exec alacritty 
+# bindsym $mod+Return exec --no-startup-id "alacritty -e 'tmux attach-session -t home || tmux new -s home -n zsh'"
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Shift+Return exec --no-startup-id alacritty -e nf
+bindsym $mod+Control+Return exec --no-startup-id alacritty -e zsh
 
 
 # kill focused window
@@ -173,7 +175,7 @@ bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec $browser 
 bindsym $mod+Control+d exec --no-startup-id "start-tesis.sh"
 bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec $browser --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
 # 4: development
-bindsym $mod+Control+Return exec --no-startup-id "start-devenv.sh"
+
 # 5: project managment
 bindsym $mod+Control+g exec --no-startup-id  "i3-msg workspace 5; exec $browser --new-window https://linear.app"
 # 8: social / messages
@@ -196,7 +198,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Control+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -400,3 +402,5 @@ bindsym $mod+v exec playerctl previous -p spotify
 bindsym $mod+n exec playerctl next -p spotify
 bindsym $mod+b exec playerctl play-pause -p spotify
 
+bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -lines 0 -no-history -calc-command 'echo -n {result} | xclip -selection clipboard'"
+bindsym $mod+Shift+c exec "rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n {result} | xclip -selection clipboard'"

@@ -149,4 +149,8 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+//@theme "/home/carri/.local/share/rofi/themes/spotlight-dark.rasi"
+//@theme "/home/carri/.local/share/rofi/themes/squared-nord.rasi"
+@theme "/home/carri/.local/share/rofi/themes/spotlight-dark.rasi"

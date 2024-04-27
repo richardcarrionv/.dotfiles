@@ -30,7 +30,7 @@ export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
 
-export LESSHISTFILE=-
+#export LESSHISTFILE=-
 export DIFFPROG="nvim -d"
 
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc

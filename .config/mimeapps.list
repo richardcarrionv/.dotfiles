@@ -1,0 +1,17 @@
+[Default Applications]
+text/html=brave-browser.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+application/pdf=mupdf-gl.desktop
+application/x-virt-viewer=remote-viewer.desktop
+video/mp4=vlc.desktop
+inode/directory=thunar.desktop
+
+[Added Associations]
+application/pdf=mupdf-gl.desktop;
+application/x-ms-dos-executable=wine.desktop;
+application/x-virt-viewer=remote-viewer.desktop;
+video/mp4=vlc.desktop;
+inode/directory=Thunar.desktop;thunar.desktop;

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-directories=$(find ~ -type d -not -name '.*' -not -path '*.*' | sed 's|^/home/carri/||')
+directories=$(find ~ -type d -not -name '.*' -not -path '*.*' -not -path '*node_modules*' | sed 's|^/home/carri/||')
 
 selected_directory=$(echo "$directories" | rofi -dmenu -i -matching fuzzy)
 

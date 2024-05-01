@@ -71,8 +71,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+Control+semicolon split h
-bindsym $mod+Control+point split v
+bindsym $mod+Control+i split h
+bindsym $mod+Control+v split v
 
 bindsym $mod+space floating toggle
 bindsym $mod+Shift+space focus mode_toggle
@@ -176,7 +176,7 @@ mode "$mode_system" {
 bindsym $mod+0 mode "$mode_system"
 
 set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
-set $social_pages https://web.whatsapp.com/
+set $social_pages https://hotmail.com/ https://web.whatsapp.com/ 
 
 bindsym Print exec flameshot gui
 
@@ -189,15 +189,17 @@ bindsym $mod+v exec playerctl previous -p spotify
 bindsym $mod+n exec playerctl next -p spotify
 bindsym $mod+b exec playerctl play-pause -p spotify
 bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -lines 0 -no-history -calc-command 'echo -n {result} | xclip -selection clipboard'"
+bindsym $mod+t exec "rofi -show tr -modes 'tr:rofi-translate.sh' -m normal"
 
 bindsym $mod+Shift+w exec --no-startup-id "rofi -show-icons -modi window -show window"
 bindsym $mod+Shift+c exec "rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n {result} | xclip -selection clipboard'"
+
 
 bindsym $mod+Control+f exec "polybar-msg cmd toggle"
 bindsym $mod+Control+w exec "i3-display-swap.sh"
 bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec $browser --new-window $doc_pages"
 bindsym $mod+Control+d exec --no-startup-id "start-tesis.sh"
-bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec $browser --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
+# bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec $browser --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
 bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 8; exec $browser --new-window $social_pages"
 bindsym $mod+Control+p exec --no-startup-id  "i3-msg workspace 9; exec spotify"
 bindsym $mod+Control+greater move workspace to output right

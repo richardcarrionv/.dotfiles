@@ -36,7 +36,7 @@ inputbar {
     font:       "Montserrat 12";
     padding:    12px;
     spacing:    12px;
-    children:   [ entry ];
+    children:   [ prompt, entry ];
 }
 
 icon-search {

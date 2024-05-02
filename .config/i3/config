@@ -74,8 +74,8 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+Control+i split h
 bindsym $mod+Control+v split v
 
-bindsym $mod+space floating toggle
-bindsym $mod+Shift+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
 
 bindsym $mod+Control+u layout toggle split
 bindsym $mod+Control+e layout tabbed
@@ -189,7 +189,6 @@ bindsym $mod+v exec playerctl previous -p spotify
 bindsym $mod+n exec playerctl next -p spotify
 bindsym $mod+b exec playerctl play-pause -p spotify
 bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -lines 0 -no-history -calc-command 'echo -n {result} | xclip -selection clipboard'"
-bindsym $mod+t exec "rofi -show tr -modes 'tr:rofi-translate.sh' -m normal"
 
 bindsym $mod+Shift+w exec --no-startup-id "rofi -show-icons -modi window -show window"
 bindsym $mod+Shift+c exec "rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n {result} | xclip -selection clipboard'"
@@ -207,3 +206,10 @@ bindsym $mod+Control+less move workspace to output left
 bindsym $mod+Control+space exec "toggle-keyboard-layout"
 
 for_window [class="Thunar"] move container to workspace $ws10; workspace $ws10
+
+
+bindsym $mod+t exec "rofi -show tr -modes 'tr:rofi-trans.sh' -m normal"
+bindsym $mod+Shift+t exec "web-dict"
+
+
+for_window [class="Brave-browser"] bindsym $mod+Control+q move scratchpad

@@ -109,3 +109,5 @@ alias src="source $ZDOTDIR/.zshrc && source $HOME/.zshenv"
 alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
 alias code='code --extensions-dir=$XDG_DATA_HOME/vscode/extensions/ --user-data-dir=$XDG_DATA_HOME/vscode/user-data/'
 alias tm='tmux attach-session -t home || tmux new -s home -n zsh'
+alias intelliju="$HOME/bin/intellij-ultimate/bin/idea.sh"
+

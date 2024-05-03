@@ -111,3 +111,7 @@ alias code='code --extensions-dir=$XDG_DATA_HOME/vscode/extensions/ --user-data-
 alias tm='tmux attach-session -t home || tmux new -s home -n zsh'
 alias intelliju="$HOME/bin/intellij-ultimate/bin/idea.sh"
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

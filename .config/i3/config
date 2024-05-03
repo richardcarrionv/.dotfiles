@@ -212,4 +212,5 @@ bindsym $mod+t exec "rofi -show tr -modes 'tr:rofi-trans.sh' -m normal"
 bindsym $mod+Shift+t exec "web-dict"
 
 
-for_window [class="Brave-browser"] bindsym $mod+Control+q move scratchpad
+for_window [class="ec-gob-firmadigital-firmador-Main"] floating enable move position center
+

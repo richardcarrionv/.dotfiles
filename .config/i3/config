@@ -195,6 +195,7 @@ bindsym $mod+Shift+c exec "rofi -show calc -modi calc -no-show-match -no-sort -c
 
 
 bindsym $mod+Control+f exec "polybar-msg cmd toggle"
+bindsym $mod+Control+m exec "pactl set-source-mute 0 toggle"
 bindsym $mod+Control+w exec "i3-display-swap.sh"
 bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec $browser --new-window $doc_pages"
 bindsym $mod+Control+d exec --no-startup-id "start-tesis.sh"
@@ -213,3 +214,4 @@ bindsym $mod+Shift+t exec "web-dict"
 
 
 for_window [class="Brave-browser"] bindsym $mod+Control+q move scratchpad
+for_window [class="zoom"] floating enable

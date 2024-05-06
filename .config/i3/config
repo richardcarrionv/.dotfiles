@@ -182,21 +182,21 @@ bindsym Print exec flameshot gui
 
 bindsym $mod+z fullscreen toggle
 bindsym $mod+e exec "thunar-rofi-opener.sh"
-bindsym $mod+w exec --no-startup-id $browser
-bindsym $mod+x exec --no-startup-id "rofi -show-icons -modi windowcd,window,drun -show drun"
+bindsym $mod+w exec --no-startup-id google-chrome
+bindsym $mod+x exec --no-startup-id "rofi -show-icons -modi drun -show drun"
 bindsym $mod+r exec --no-startup-id alacritty -e "ranger"
 bindsym $mod+v exec playerctl previous -p spotify
 bindsym $mod+n exec playerctl next -p spotify
 bindsym $mod+b exec playerctl play-pause -p spotify
 bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -lines 0 -no-history -calc-command 'echo -n {result} | xclip -selection clipboard'"
 
-bindsym $mod+Shift+w exec --no-startup-id "rofi -show-icons -modi window -show window"
+bindsym $mod+Shift+w exec --no-startup-id "rofi drun -show-icons -show drun -drun-categories 'Work'"
 bindsym $mod+Shift+c exec "rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n {result} | xclip -selection clipboard'"
 
 
 bindsym $mod+Control+f exec "polybar-msg cmd toggle"
 bindsym $mod+Control+m exec "pactl set-source-mute 0 toggle"
-bindsym $mod+Control+w exec "i3-display-swap.sh"
+bindsym $mod+Control+w exec "google-chrome"
 bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec $browser --new-window $doc_pages"
 bindsym $mod+Control+d exec --no-startup-id "start-tesis.sh"
 # bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec $browser --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"

@@ -4,8 +4,9 @@ dirs="$HOME/.config $HOME/.local/bin $HOME/dev"
 max_depth=""
 min_depth=""
 window_name='neovim'
+replace=""
 
-while getopts ":d:M:m:n:" opt; do
+while getopts ":d:M:m:n:r:" opt; do
   case ${opt} in
     d ) # Set custom directories
         dirs=$OPTARG
@@ -19,6 +20,9 @@ while getopts ":d:M:m:n:" opt; do
     n ) # Set custom window name
         window_name=$OPTARG
         ;;
+    r ) # Set custom window name
+        replace=$OPTARG
+        ;;
     \? ) echo "Usage: $(basename $0) [-d <directory>] [-M <maxdepth>] [-m <mindepth>] [-n <window_name>]"
          exit 1
         ;;
@@ -26,7 +30,7 @@ while getopts ":d:M:m:n:" opt; do
 done
 shift $((OPTIND -1))
 
-selected=$(find $dirs $min_depth $max_depth -not -path '*\.dotfiles*' -type d | fzf)
+selected=$(find $dirs $min_depth $max_depth -not -path '*\.dotfiles*' -type d | sed "s|$replace||" | fzf)
 
 if [[ -z $selected ]]; then
     exit 0
@@ -36,12 +40,12 @@ selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected -n $window_name
+    tmux new-session -s $selected_name -c "$replece$selected" -n $window_name
     exit 0
 fi
 
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected -n $window_name
+    tmux new-session -ds $selected_name -c "$replace$selected" -n $window_name
 fi
 
 tmux switch-client -t $selected_name

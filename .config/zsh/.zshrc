@@ -109,5 +109,15 @@ alias src="source $ZDOTDIR/.zshrc && source $HOME/.zshenv"
 alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
 alias code='code --extensions-dir=$XDG_DATA_HOME/vscode/extensions/ --user-data-dir=$XDG_DATA_HOME/vscode/user-data/'
 alias tm='tmux attach-session -t home || tmux new -s home -n zsh'
-alias intelliju="$HOME/bin/intellij-ultimate/bin/idea.sh"
+alias ideau="$HOME/bin/intellij-ultimate/bin/idea.sh"
 
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+source ~/freightsimple-local-env

@@ -8,6 +8,7 @@ application/pdf=mupdf-gl.desktop
 application/x-virt-viewer=remote-viewer.desktop
 video/mp4=vlc.desktop
 inode/directory=thunar.desktop
+x-scheme-handler/eclipse+command=_usr_share_dbeaver-ce_.desktop
 
 [Added Associations]
 application/pdf=mupdf-gl.desktop;

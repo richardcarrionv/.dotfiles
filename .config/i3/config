@@ -182,7 +182,7 @@ bindsym Print exec flameshot gui
 
 bindsym $mod+z fullscreen toggle
 bindsym $mod+e exec "thunar-rofi-opener.sh"
-bindsym $mod+w exec --no-startup-id google-chrome
+bindsym $mod+w exec --no-startup-id brave-browser
 bindsym $mod+x exec --no-startup-id "rofi -show-icons -modi drun -show drun"
 bindsym $mod+r exec --no-startup-id alacritty -e "ranger"
 bindsym $mod+v exec playerctl previous -p spotify
@@ -215,3 +215,5 @@ bindsym $mod+Shift+t exec "web-dict"
 
 for_window [class="Brave-browser"] bindsym $mod+Control+q move scratchpad
 for_window [class="zoom"] floating enable
+for_window [class="1Password"] floating enable
+for_window [class="Pavucontrol"] floating enable

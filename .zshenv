@@ -58,6 +58,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc":"$XDG_CONFIG_HOME/gtk-2.0/
 # export GEM_SPEC_CACHE="$XDG_DATA_HOME/ruby/specs"
 # export GEM_HOME="$XDG_DATA_HOME/ruby/gems"
 
+export SHELL="/bin/zsh"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"

@@ -2,7 +2,7 @@
 
 ## Dependencies
 ```
-alacritty tmux neovim polybar rofi i3 zsh fzf feh
+alacritty tmux neovim polybar rofi i3 zsh fzf feh xrandr
 ```
 - Espanso
 

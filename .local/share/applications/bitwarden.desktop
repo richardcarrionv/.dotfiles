@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Bitwarden
+Exec=/home/carri/bin/Bitwarden-2024.4.1-x86_64.AppImage
+Icon=/home/carri/.local/share/applications/icons/bitwarden.png
+Terminal=false

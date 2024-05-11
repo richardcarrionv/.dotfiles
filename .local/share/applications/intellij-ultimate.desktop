@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=IntellIJ Ultimate
+Exec=/home/carri/bin/intellij-ultimate/bin/idea.sh
+Icon=/home/carri/bin/intellij-ultimate/bin/idea.svg
+Terminal=false

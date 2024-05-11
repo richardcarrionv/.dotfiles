@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Front
+Exec=open-work "brave-browser https://app.frontapp.com"
+Icon=/home/carri/.local/share/applications/icons/front.jpg
+Terminal=false
+Categories=Work

@@ -2,6 +2,7 @@ Plug 'preservim/nerdtree'
 
 set number
 set relativenumber
+set clipboard+=unnamed
 
 let mapleader=" "
 nmap  <leader>w :write<CR>

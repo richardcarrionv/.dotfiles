@@ -35,5 +35,5 @@ Option "Tapping" "true"
 ```
 
 ```
-git config --global credential.helper 'store --file ~/.my-credentials'
+git config --global credential.helper 'store --file ~/.config/git/.credentials'
 ```

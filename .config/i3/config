@@ -190,7 +190,7 @@ bindsym $mod+n exec playerctl next -p spotify
 bindsym $mod+b exec playerctl play-pause -p spotify
 bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -lines 0 -no-history -calc-command 'echo -n {result} | xclip -selection clipboard'"
 
-bindsym $mod+Shift+w exec --no-startup-id "rofi drun -show-icons -show drun -drun-categories 'Work'"
+bindsym $mod+Shift+w exec --no-startup-id "i3-display-swap.sh"
 bindsym $mod+Shift+c exec "rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n {result} | xclip -selection clipboard'"
 
 

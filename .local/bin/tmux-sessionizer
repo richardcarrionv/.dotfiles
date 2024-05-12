@@ -6,8 +6,11 @@ min_depth=""
 window_name='neovim'
 replace=""
 
-while getopts ":d:M:m:n:r:" opt; do
+while getopts ":D:d:M:m:n:r:" opt; do
   case ${opt} in
+    D ) # Set custom directories
+        selected=$OPTARG
+        ;;
     d ) # Set custom directories
         dirs=$OPTARG
         ;;
@@ -30,7 +33,9 @@ while getopts ":d:M:m:n:r:" opt; do
 done
 shift $((OPTIND -1))
 
-selected=$(find $dirs $min_depth $max_depth -not -path '*\.dotfiles*' -type d | sed "s|$replace||" | fzf)
+if [[ -z "$selected" ]]; then
+  selected=$(find $dirs $min_depth $max_depth -not -path '*\.dotfiles*' -type d | sed "s|$replace||" | fzf)
+fi
 
 if [[ -z $selected ]]; then
     exit 0

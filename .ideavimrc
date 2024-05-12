@@ -16,6 +16,8 @@ nmap <C-h> <action>(PrevSplitter)
 nmap <C-l> <action>(NextSplitter)
 nmap <leader>fl <action>(GotoFile)
 
+
+nmap <C-n> <action>(ActivateProjectToolWindow)
 nmap <C-n> :NERDTreeToggle<CR>
 nmap <leader>nf :NERDTreeFind<CR>
 
@@ -28,7 +30,6 @@ nmap <C-k> <action>(SplitChooser.SplitTop)
 nmap <C-k> <action>(Table-selectPreviousRow)
 nmap <C-k> <action>(Terminal.SelectBlockAbove)
 nmap <C-k> <action>(Tree-selectPrevious)
-
 
 
 nmap <C-j> <action>(List-selectNextRow)
@@ -53,6 +54,11 @@ nmap gr <action>(FindUsages)
 nmap <C-j> <action>(NextOccurence)
 nmap <C-k> <action>(PreviousOccurence)
 
+
+nmap <leader>fm <action>(ReformatCode)
+
+
+nmap <leader>zm <action>(ToggleDistractionFreeMode)
 
 " CodeFloatingToolbar.GotoNextMenu                   <Tab>
 " Console.History.Next
@@ -141,7 +147,6 @@ nmap <C-k> <action>(PreviousOccurence)
 " ActivatePersistenceToolWindow
 " ActivateProblemsViewToolWindow                     <A-6>
 " ActivateProfilerToolWindow
-" ActivateProjectToolWindow                          <A-1> <C-N>
 " ActivatePullRequestsToolWindow
 " ActivateRunToolWindow                              <A-4>
 " ActivateServicesToolWindow                         <A-8>
@@ -2944,7 +2949,6 @@ nmap <C-k> <action>(PreviousOccurence)
 " RefactoringMenu4
 " RefactoringMenuRenameFile
 " Refactorings.QuickListPopupAction                  <A-C-S-T>
-" ReformatCode                                       <A-C-L>
 " ReformatWithPrettierAction                         <A-C-S-P>
 " Refresh                                            <C-F5>
 " Register
@@ -3561,7 +3565,6 @@ nmap <C-k> <action>(PreviousOccurence)
 " ToggleCompletionHintsAction
 " ToggleContentUiTypeMode
 " ToggleCreateChangeListForGuestChanges
-" ToggleDistractionFreeMode
 " ToggleDockMode
 " ToggleFieldBreakpoint
 " ToggleFindInSelection                              <A-C-E>

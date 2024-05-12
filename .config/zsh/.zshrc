@@ -107,9 +107,13 @@ alias psh="pipenv shell"
 # alias dev="/home/carri/.config/i3/start-devenv.sh"
 alias src="source $ZDOTDIR/.zshrc && source $HOME/.zshenv"
 alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
-alias code='code --extensions-dir=$XDG_DATA_HOME/vscode/extensions/ --user-data-dir=$XDG_DATA_HOME/vscode/user-data/'
+
 alias tm='tmux attach-session -t home || tmux new -s home -n zsh'
 alias ideau="$HOME/bin/idea-ultimate/bin/idea.sh"
+
+alias ap="tmuxp load --yes /home/carri/.local/share/tmuxp/apollo.yaml"
+alias wp="tmuxp load --yes /home/carri/.local/share/tmuxp/public-web-app.yaml"
+alias fs="tmuxp load --yes /home/carri/.local/share/tmuxp/freightsimple.yaml"
 
 
 export NVM_DIR="$HOME/.config/nvm"
@@ -121,3 +125,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 source ~/freightsimple-local-env
+
+export DISABLE_AUTO_TITLE='true'

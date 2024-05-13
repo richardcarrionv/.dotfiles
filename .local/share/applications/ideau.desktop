@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=IntelliJ IDEA Ultimate 2024.1.1
+Name=JetBrains IntelliJ IDEA Ultimate
 Exec=/bin/zsh -l -i -c "$HOME/bin/ideau/bin/idea.sh" %u
 Version=1.0
 Type=Application
-Categories=Development;IDE;
+Categories=Development;IDE;jetbrains
 Terminal=false
 Icon=/home/carri/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea.svg
 Comment=The Leading Java and Kotlin IDE
-StartupWMClass=jetbrains-idea
+StartupWMClass=IntelliJ IDEA Ultimate
 StartupNotify=true

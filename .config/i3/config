@@ -92,6 +92,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
 
 workspace $ws1 output HDMI-1
 workspace $ws2 output HDMI-1
@@ -104,6 +105,7 @@ workspace $ws7 output eDP-1
 workspace $ws8 output eDP-1
 workspace $ws9 output eDP-1
 workspace $ws10 output eDP-1
+workspace $ws11 output eDP-1
 
 bindsym $mod+Tab workspace next
 
@@ -117,6 +119,7 @@ bindsym $mod+i workspace $ws7
 bindsym $mod+o workspace $ws8
 bindsym $mod+p workspace $ws9
 bindsym $mod+semicolon workspace $ws10
+bindsym $mod+m workspace $ws11
 
 bindsym $mod+Shift+a move container to workspace $ws1
 bindsym $mod+Shift+s move container to workspace $ws2
@@ -129,6 +132,7 @@ bindsym $mod+Shift+i move container to workspace $ws7
 bindsym $mod+Shift+o move container to workspace $ws8
 bindsym $mod+Shift+p move container to workspace $ws9
 bindsym $mod+Shift+semicolon move container to workspace $ws10
+bindsym $mod+Shift+m move container to workspace $ws11
 
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -181,22 +185,22 @@ set $social_pages https://hotmail.com/ https://web.whatsapp.com/
 bindsym Print exec flameshot gui
 
 bindsym $mod+z fullscreen toggle
-bindsym $mod+e exec "thunar-rofi-opener.sh"
+# bindsym $mod+e exec "thunar-rofi-opener.sh"
 bindsym $mod+w exec --no-startup-id brave-browser
-bindsym $mod+x exec --no-startup-id "rofi -show-icons -modi drun -show drun"
+bindsym $mod+x exec --no-startup-id "rofi -show-icons -show combi -combi-modes 'window,drun' -modes combi"
 bindsym $mod+r exec --no-startup-id alacritty -e "ranger"
 bindsym $mod+v exec playerctl previous -p spotify
 bindsym $mod+n exec playerctl next -p spotify
 bindsym $mod+b exec playerctl play-pause -p spotify
 bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -lines 0 -no-history -calc-command 'echo -n {result} | xclip -selection clipboard'"
 
-bindsym $mod+Shift+w exec --no-startup-id "i3-display-swap.sh"
+bindsym $mod+Shift+w exec brave-browser 
 bindsym $mod+Shift+c exec "rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n {result} | xclip -selection clipboard'"
 
 
 bindsym $mod+Control+f exec "polybar-msg cmd toggle"
 bindsym $mod+Control+m exec "pactl set-source-mute 0 toggle"
-bindsym $mod+Control+w exec "google-chrome"
+bindsym $mod+Control+w exec --no-startup-id "i3-display-swap.sh"
 bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec $browser --new-window $doc_pages"
 bindsym $mod+Control+d exec --no-startup-id "start-tesis.sh"
 # bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec $browser --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
@@ -213,8 +217,7 @@ bindsym $mod+t exec "rofi -show tr -modes 'tr:rofi-trans.sh' -m normal"
 bindsym $mod+Shift+t exec "web-dict"
 
 
-for_window [class="Brave-browser"] bindsym $mod+Control+q move scratchpad
-for_window [class="zoom"] floating enable
+for_window [class="zoom"] floating enable, move container to workspace $ws11; workspace $ws11
 for_window [class="1Password"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Cypress"] move container to workspace $ws7; workspace $ws7

@@ -73,6 +73,8 @@ nmap <leader>zm <action>(ToggleDistractionFreeMode)
 nmap <leader>bd <action>(ActivateBuildToolWindow)
 nmap <leader>rn <action>(ActivateRunToolWindow)
 
+nmap <leader>na <action>(RenameElement)
+
 " CodeFloatingToolbar.GotoNextMenu                   <Tab>
 " Console.History.Next
 " Console.TableResult.NextPage                       <A-C-Down>
@@ -2992,7 +2994,6 @@ nmap <leader>rn <action>(ActivateRunToolWindow)
 " RemoveFromLiquibaseIgnore
 " RemoveLiquibaseChangesActionGroup
 " RenameAttributeAction
-" RenameElement                                      <S-F6>
 " RenameFile
 " RenameTagAction
 " ReopenClosedTab

@@ -217,3 +217,5 @@ for_window [class="Brave-browser"] bindsym $mod+Control+q move scratchpad
 for_window [class="zoom"] floating enable
 for_window [class="1Password"] floating enable
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Cypress"] move container to workspace $ws7; workspace $ws7
+for_window [class="jetbrains-idea"] move container to workspace $ws3

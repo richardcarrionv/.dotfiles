@@ -75,6 +75,13 @@ nmap <leader>rn <action>(ActivateRunToolWindow)
 
 nmap <leader>na <action>(RenameElement)
 
+nmap <leader>ca <action>(ShowIntentionActions)
+
+" RecentChangedFiles
+" RecentChanges                                      <A-S-C>
+nmap <leader>rf <action>(RecentFiles)
+" RecentLocations                                    <C-S-E>
+
 " CodeFloatingToolbar.GotoNextMenu                   <Tab>
 " Console.History.Next
 " Console.TableResult.NextPage                       <A-C-Down>
@@ -2947,10 +2954,6 @@ nmap <leader>na <action>(RenameElement)
 " Read.V8.Log.In.House
 " RearrangeCode
 " ReBulkReverseEngineering
-" RecentChangedFiles
-" RecentChanges                                      <A-S-C>
-" RecentFiles                                        <C-E>
-" RecentLocations                                    <C-S-E>
 " RecentProjectListGroup
 " RecoverCachesFromLog
 " RedesignedRunConfigurationSelector
@@ -3258,7 +3261,6 @@ nmap <leader>na <action>(RenameElement)
 " ShowGulpTasks
 " ShowGutterIconsSettings
 " ShowHoverInfo
-" ShowIntentionActions                               <A-CR>
 " ShowIntentionsGroup
 " ShowJsbtTasks
 " ShowKotlinBytecode

@@ -76,4 +76,4 @@ export LAUNCHER="rofi"
 path=("$HOME/.local/bin" "/home/carri/.sdkman " "$HOME/bin" "$path[@]")
 export PATH
 
-. "/home/carri/.local/share/cargo/env"
+# . "/home/carri/.local/share/cargo/env"

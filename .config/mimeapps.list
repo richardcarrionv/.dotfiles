@@ -17,3 +17,4 @@ application/x-ms-dos-executable=wine.desktop;
 application/x-virt-viewer=remote-viewer.desktop;
 video/mp4=vlc.desktop;
 inode/directory=Thunar.desktop;thunar.desktop;
+image/tiff=feh.desktop;

@@ -151,8 +151,12 @@ mode "resize" {
         bindsym Control+h resize grow height 5 px or 5 ppt
         bindsym h resize shrink height 5 px or 5 ppt
 
+        bindsym j floating enable, resize set 1000 650, move position 1500 px 400 px, mode "default"
+        bindsym k floating disable,  mode "default"
+        bindsym c floating enable, resize set 2000 950, move position center, mode "default"
+
         bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Down resije grow height 5 px or 5 ppt
         bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
 
@@ -160,7 +164,7 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+Control+r mode "default"
 }
-bindsym $mod+Control+r mode "resize"
+bindsym $mod+r mode "resize"
 
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -188,7 +192,7 @@ bindsym $mod+z fullscreen toggle
 # bindsym $mod+e exec "thunar-rofi-opener.sh"
 bindsym $mod+w exec --no-startup-id brave-browser
 bindsym $mod+x exec --no-startup-id "rofi -show-icons -show combi -combi-modes 'window,drun' -modes combi"
-bindsym $mod+r exec --no-startup-id alacritty -e "ranger"
+# bindsym $mod+r exec --no-startup-id alacritty -e "ranger"
 bindsym $mod+v exec playerctl previous -p spotify
 bindsym $mod+n exec playerctl next -p spotify
 bindsym $mod+b exec playerctl play-pause -p spotify
@@ -206,8 +210,7 @@ bindsym $mod+Control+d exec --no-startup-id "start-tesis.sh"
 # bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec $browser --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
 bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 8; exec $browser --new-window $social_pages"
 bindsym $mod+Control+p exec --no-startup-id  "i3-msg workspace 9; exec spotify"
-bindsym $mod+Control+greater move workspace to output right
-bindsym $mod+Control+less move workspace to output left
+bindsym $mod+Control+period move workspace to output right
 bindsym $mod+Control+space exec "toggle-keyboard-layout"
 
 bindsym $mod+t exec "rofi -show tr -modes 'tr:rofi-trans.sh' -m normal"
@@ -215,7 +218,7 @@ bindsym $mod+Shift+t exec "web-dict"
 
 for_window [class="Thunar"] move container to workspace $ws10; workspace $ws10
 
-for_window [class="zoom"] floating enable, move container to workspace $ws11; workspace $ws11
+for_window [class="zoom"] floating enable, move container to workspace $ws11
 for_window [class="zoom"] resize set 1200 800
 
 for_window [class="1Password"] floating enable
@@ -230,8 +233,13 @@ for_window [class="Cypress"] floating enable
 for_window [class="jetbrains-idea"] move container to workspace $ws3
 
 for_window [class="Slack"] floating enable
-for_window [class="Slack"] resize set 1600 800
+for_window [class="Slack"] resize set 1800 900
 for_window [class="Slack"] move position center
+
+
+for_window [class="Insomnia"] floating enable
+for_window [class="Insomnia"] resize set 1800 900
+for_window [class="Insomnia"] move position center
 
 for_window [title="Charles"] floating enable
 for_window [title="Charles"] resize set 1600 600
@@ -247,5 +255,9 @@ for_window [title="Linear"] resize set 1600 1000
 for_window [title="Linear"] move position center
 
 
+for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] floating enable
+for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] resize set 2000 950
+for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] move position center
+
 bindsym $mod+comma exec "i3-rofi-scratchpad"
-bindsym $mod+Shift+comma move scratchpad
+bindsym $mod+Control+comma move scratchpad

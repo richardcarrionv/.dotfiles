@@ -190,7 +190,7 @@ bindsym Print exec flameshot gui
 
 bindsym $mod+z fullscreen toggle
 # bindsym $mod+e exec "thunar-rofi-opener.sh"
-bindsym $mod+w exec --no-startup-id brave-browser
+bindsym $mod+w exec --no-startup-id "i3-msg workspace 2; brave-browser"
 bindsym $mod+x exec --no-startup-id "rofi -show-icons -show combi -combi-modes 'window,drun' -modes combi"
 # bindsym $mod+r exec --no-startup-id alacritty -e "ranger"
 bindsym $mod+v exec playerctl previous -p spotify
@@ -258,6 +258,9 @@ for_window [title="Linear"] move position center
 for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] floating enable
 for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] resize set 2000 950
 for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] move position center
+
+assign [instance="brave-browser"] 2
+assign [instance="google-chrome"] 1
 
 bindsym $mod+comma exec "i3-rofi-scratchpad"
 bindsym $mod+Control+comma move scratchpad

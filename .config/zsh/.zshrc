@@ -117,3 +117,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 source ~/freightsimple-local-env
 
 export DISABLE_AUTO_TITLE='true'
+
+export http_proxy=http://127.0.0.1:9090
+export https_proxy=https://172.0.0.1:9090
+export HTTP_PROXY=http://127.0.0.1:9090
+export HTTPS_PROXY=https://172.0.0.1:9090
+# exprot no_proxy=localhost, 127.0.0.1, *.my.lan

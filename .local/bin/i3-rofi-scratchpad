@@ -1,0 +1,8 @@
+#!/bin/bash
+i3-msg -t get_tree | \
+jq '.nodes[] | .nodes[] | .nodes[] | select(.name=="__i3_scratch") | .floating_nodes[] | .nodes[] | .window,.window_properties.class,.name' | \
+sed 's/\"//g' | \
+paste - - - | \
+rofi -dmenu -i -p "i3 Scratch" | \
+cut -f1 | \
+xargs -I "PID" i3-msg "[id=PID] scratchpad show"

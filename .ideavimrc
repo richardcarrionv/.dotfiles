@@ -2,6 +2,9 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
+" Generate code
+" Run test
+
 
 set number
 set relativenumber
@@ -23,8 +26,10 @@ xnoremap <leader>c<leader> :Commentary<CR>
  
 
 
-nmap <C-h> <action>(PrevSplitter)
-nmap <C-l> <action>(NextSplitter)
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
 nmap <leader>fl <action>(GotoFile)
 
 
@@ -33,28 +38,31 @@ nmap <C-n> :NERDTreeToggle<CR>
 nmap <leader>nf :NERDTreeFind<CR>
 
 
-nmap <C-k> <action>(EditorUp)
-nmap <C-k> <action>(List-selectPreviousRow)
-nmap <C-k> <action>(NavBar-selectUp)
-nmap <C-k> <action>(PopupMenu-selectPrevious)
-nmap <C-k> <action>(SplitChooser.SplitTop)
-nmap <C-k> <action>(Table-selectPreviousRow)
-nmap <C-k> <action>(Terminal.SelectBlockAbove)
-nmap <C-k> <action>(Tree-selectPrevious)
-
-
-nmap <C-j> <action>(List-selectNextRow)
-nmap <C-j> <action>(PopupMenu-selectNext)
-nmap <C-j> <action>(Table-selectNextRow)
-nmap <C-j> <action>(Tree-selectNext)
-nmap <C-j> <action>(EditorDown)
-nmap <C-j> <action>(List-selectNextRow)
-nmap <C-j> <action>(NavBar-selectDown)
-nmap <C-j> <action>(PopupMenu-selectNext)
-nmap <C-j> <action>(SplitChooser.SplitDown)
-nmap <C-j> <action>(Table-selectNextRow)
-nmap <C-j> <action>(Terminal.SelectBlockBelow)
-nmap <C-j> <action>(Tree-selectNext)
+" nmap <C-k> <action>(EditorUp)
+" nmap <C-k> <action>(List-selectPreviousRow)
+" nmap <C-k> <action>(NavBar-selectUp)
+" nmap <C-k> <action>(PopupMenu-selectPrevious)
+" nmap <C-k> <action>(SplitChooser.SplitTop)
+" nmap <C-k> <action>(Table-selectPreviousRow)
+" nmap <C-k> <action>(Terminal.SelectBlockAbove)
+" nmap <C-k> <action>(Tree-selectPrevious)
+"
+"
+" nmap <C-j> <action>(List-selectNextRow)
+" nmap <C-j> <action>(PopupMenu-selectNext)
+" nmap <C-j> <action>(Table-selectNextRow)
+" nmap <C-j> <action>(Tree-selectNext)
+" nmap <C-j> <action>(EditorDown)
+" nmap <C-j> <action>(List-selectNextRow)
+" nmap <C-j> <action>(NavBar-selectDown)
+" nmap <C-j> <action>(PopupMenu-selectNext)
+" nmap <C-j> <action>(SplitChooser.SplitDown)
+" nmap <C-j> <action>(Table-selectNextRow)
+" nmap <C-j> <action>(Terminal.SelectBlockBelow)
+" nmap <C-j> <action>(Tree-selectNext)
+"
+nmap <leader>n <action>(NextOccurence)
+nmap <leader>p <action>(PreviousOccurence)
 
 
 " nmap <C-S-f> <action>(Find)
@@ -62,8 +70,6 @@ nmap <C-S-f> <action>(ActivateFindToolWindow)
 nmap <leader>gp <action>(FindInPath)
 nmap gr <action>(FindUsages)
 
-nmap <C-j> <action>(NextOccurence)
-nmap <C-k> <action>(PreviousOccurence)
 
 
 nmap <leader>fm <action>(ReformatCode)
@@ -77,6 +83,8 @@ nmap <leader>na <action>(RenameElement)
 
 nmap <leader>ca <action>(ShowIntentionActions)
 
+
+nmap <leader>fd <action>(CollapseRegionRecursively)
 " RecentChangedFiles
 " RecentChanges                                      <A-S-C>
 nmap <leader>rf <action>(RecentFiles)
@@ -410,7 +418,6 @@ nmap <leader>rf <action>(RecentFiles)
 " CollapseDocComments
 " CollapseExpandableComponent                        <S-CR> <C-m> <C-->
 " CollapseRegion                                     <C-m> <C-->
-" CollapseRegionRecursively                          <A-C-m> <A-C-->
 " CollapseSelection                                  <C-.>
 " CollapseTreeNode                                   <m>
 " CollapsiblePanel-toggle                            < >

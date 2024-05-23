@@ -15,7 +15,7 @@ font pango:monospace 8
 
 # Start XDG autostart .desktop files using dex. See also
 #exec --no-startup-id xmodmap .xmodmap
-exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1
+exec --no-startup-id xrandr --output HDMI-1 --auto --left-of eDP-1 --primary
 # exec --no-startup-id 'xrandr --output HDMI-1-1 --auto --above eDP-1'
 exec --no-startup-id dex --autostart --environment i3
 
@@ -210,15 +210,42 @@ bindsym $mod+Control+greater move workspace to output right
 bindsym $mod+Control+less move workspace to output left
 bindsym $mod+Control+space exec "toggle-keyboard-layout"
 
-for_window [class="Thunar"] move container to workspace $ws10; workspace $ws10
-
-
 bindsym $mod+t exec "rofi -show tr -modes 'tr:rofi-trans.sh' -m normal"
 bindsym $mod+Shift+t exec "web-dict"
 
+for_window [class="Thunar"] move container to workspace $ws10; workspace $ws10
 
 for_window [class="zoom"] floating enable, move container to workspace $ws11; workspace $ws11
+for_window [class="zoom"] resize set 1200 800
+
 for_window [class="1Password"] floating enable
+for_window [class="1Password"] resize set 1000 600
+for_window [class="1Password"] move position 1500 px 400 px
+
 for_window [class="Pavucontrol"] floating enable
+
 for_window [class="Cypress"] move container to workspace $ws7; workspace $ws7
+for_window [class="Cypress"] floating enable
+
 for_window [class="jetbrains-idea"] move container to workspace $ws3
+
+for_window [class="Slack"] floating enable
+for_window [class="Slack"] resize set 1600 800
+for_window [class="Slack"] move position center
+
+for_window [title="Charles"] floating enable
+for_window [title="Charles"] resize set 1600 600
+for_window [title="Charles"] move position center
+
+for_window [title="Spotify"] floating enable
+for_window [title="Spotify"] resize set 1600 1000
+for_window [title="Spotify"] move position center
+
+
+for_window [title="Linear"] floating enable
+for_window [title="Linear"] resize set 1600 1000
+for_window [title="Linear"] move position center
+
+
+bindsym $mod+comma exec "i3-rofi-scratchpad"
+bindsym $mod+Shift+comma move scratchpad

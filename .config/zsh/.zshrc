@@ -102,6 +102,8 @@ alias wp="tmuxp load --yes /home/carri/.local/share/tmuxp/public-web-app.yaml"
 alias fs="tmuxp load --yes /home/carri/.local/share/tmuxp/freightsimple.yaml"
 alias edp="xrandr --output eDP-1 --mode "1920x1200""
 
+alias slack="run-or-scratchpad -i slack -c slack"
+alias spotify="run-or-scratchpad -i spotify -c spotify"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

@@ -73,7 +73,7 @@ export LAUNCHER="rofi"
 # export VIDEO="mpv"
 # export IMAGE="sxiv"
 
-path=("$HOME/.local/bin" "/home/carri/.sdkman " "$HOME/bin" "$path[@]")
+path=("$HOME/.local/bin" "/home/carri/.sdkman " "$HOME/bin" "$HOME/.local/bin/run" "$path[@]")
 export PATH
 
 # . "/home/carri/.local/share/cargo/env"

@@ -23,6 +23,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
+#exec --no-startup-id sxhkd
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -30,57 +31,11 @@ exec --no-startup-id nm-applet
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
-
-bindsym $mod+Control+c reload
-bindsym $mod+Shift+r restart
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-bindsym XF86MonBrightnessUp exec "brightnessctl s +2%"
-bindsym XF86MonBrightnessDown exec "brightnessctl s 2%-"
 
 floating_modifier $mod
-
-bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+Shift+Return exec --no-startup-id alacritty -e nf
-bindsym $mod+Control+Return exec --no-startup-id alacritty -e zsh
-
-bindsym $mod+Shift+q kill
-
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-bindsym $mod+Control+h move left
-bindsym $mod+Control+j move down
-bindsym $mod+Control+k move up
-bindsym $mod+Control+l move right
-
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-bindsym $mod+Control+i split h
-bindsym $mod+Control+v split v
-
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-
-bindsym $mod+Control+u layout toggle split
-bindsym $mod+Control+e layout tabbed
-bindsym $mod+Control+t layout stacked
-
 
 set $ws1 "1"
 set $ws2 "2"
@@ -107,44 +62,6 @@ workspace $ws9 output eDP-1
 workspace $ws10 output eDP-1
 workspace $ws11 output eDP-1
 
-bindsym $mod+Tab workspace next
-
-bindsym $mod+a workspace $ws1
-bindsym $mod+s workspace $ws2
-bindsym $mod+d workspace $ws3
-bindsym $mod+f workspace $ws4
-bindsym $mod+g workspace $ws5
-bindsym $mod+u workspace $ws6
-bindsym $mod+i workspace $ws7
-bindsym $mod+o workspace $ws8
-bindsym $mod+p workspace $ws9
-bindsym $mod+semicolon workspace $ws10
-bindsym $mod+m workspace $ws11
-
-bindsym $mod+Shift+a move container to workspace $ws1
-bindsym $mod+Shift+s move container to workspace $ws2
-bindsym $mod+Shift+d move container to workspace $ws3
-bindsym $mod+Shift+f move container to workspace $ws4
-bindsym $mod+Shift+g move container to workspace $ws5
-
-bindsym $mod+Shift+u move container to workspace $ws6
-bindsym $mod+Shift+i move container to workspace $ws7
-bindsym $mod+Shift+o move container to workspace $ws8
-bindsym $mod+Shift+p move container to workspace $ws9
-bindsym $mod+Shift+semicolon move container to workspace $ws10
-bindsym $mod+Shift+m move container to workspace $ws11
-
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-
 mode "resize" {
         bindsym w resize shrink width 5 px or 5 ppt
         bindsym Control+w resize grow width 5 px or 5 ppt
@@ -164,7 +81,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+Control+r mode "default"
 }
-bindsym $mod+r mode "resize"
 
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -181,40 +97,15 @@ mode "$mode_system" {
     bindsym Escape mode "default"
     bindsym $mod+0 mode "default"
 }
-bindsym $mod+0 mode "$mode_system"
 
 set $doc_pages https://tailwindcss.com/ https://ui.shadcn.com/ https://www.radix-ui.com/icons
 set $social_pages https://hotmail.com/ https://web.whatsapp.com/ 
 
-bindsym Print exec flameshot gui
 
-bindsym $mod+z fullscreen toggle
 # bindsym $mod+e exec "thunar-rofi-opener.sh"
-bindsym $mod+w exec --no-startup-id "i3-msg workspace 2; brave-browser"
-bindsym $mod+x exec --no-startup-id "rofi -show-icons -show combi -combi-modes 'window,drun' -modes combi"
 # bindsym $mod+r exec --no-startup-id alacritty -e "ranger"
-bindsym $mod+v exec playerctl previous -p spotify
-bindsym $mod+n exec playerctl next -p spotify
-bindsym $mod+b exec playerctl play-pause -p spotify
-bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -lines 0 -no-history -calc-command 'echo -n {result} | xclip -selection clipboard'"
-
-bindsym $mod+Shift+w exec brave-browser 
-bindsym $mod+Shift+c exec "rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n {result} | xclip -selection clipboard'"
-
-
-bindsym $mod+Control+f exec "polybar-msg cmd toggle"
-bindsym $mod+Control+m exec "pactl set-source-mute 0 toggle"
-bindsym $mod+Control+w exec --no-startup-id "i3-display-swap.sh"
-bindsym $mod+Control+a exec --no-startup-id  "i3-msg workspace 1; exec $browser --new-window $doc_pages"
-bindsym $mod+Control+d exec --no-startup-id "start-tesis.sh"
 # bindsym $mod+Control+i exec --no-startup-id  "i3-msg workspace 3; exec $browser --new-window https://github.com/uta-production-units/market-api https://github.com/uta-production-units/market"
-bindsym $mod+Control+o exec --no-startup-id  "i3-msg workspace 8; exec $browser --new-window $social_pages"
-bindsym $mod+Control+p exec --no-startup-id  "i3-msg workspace 9; exec spotify"
-bindsym $mod+Control+period move workspace to output right
-bindsym $mod+Control+space exec "toggle-keyboard-layout"
 
-bindsym $mod+t exec "rofi -show tr -modes 'tr:rofi-trans.sh' -m normal"
-bindsym $mod+Shift+t exec "web-dict"
 
 for_window [class="Thunar"] move container to workspace $ws10; workspace $ws10
 
@@ -249,11 +140,9 @@ for_window [title="Spotify"] floating enable
 for_window [title="Spotify"] resize set 1600 1000
 for_window [title="Spotify"] move position center
 
-
-for_window [title="Linear"] floating enable
-for_window [title="Linear"] resize set 1600 1000
-for_window [title="Linear"] move position center
-
+for_window [instance="crx_bgdbmehlmdmddlgneophbcddadgknlpm"] floating enable
+for_window [instance="crx_bgdbmehlmdmddlgneophbcddadgknlpm"] resize set 1600 1000
+for_window [instance="crx_bgdbmehlmdmddlgneophbcddadgknlpm"] move position center
 
 for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] floating enable
 for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] resize set 2000 950
@@ -262,5 +151,106 @@ for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] move position cente
 assign [instance="brave-browser"] 2
 assign [instance="google-chrome"] 1
 
-bindsym $mod+comma exec "i3-rofi-scratchpad"
-bindsym $mod+Control+comma move scratchpad
+bindsym $mod+Tab workspace next
+
+bindsym $mod+a workspace $ws1
+bindsym $mod+s workspace $ws2
+bindsym $mod+d workspace $ws3
+bindsym $mod+f workspace $ws4
+bindsym $mod+g workspace $ws5
+bindsym $mod+1 workspace $ws6
+bindsym $mod+2 workspace $ws7
+bindsym $mod+3 workspace $ws8
+bindsym $mod+4 workspace $ws9
+bindsym $mod+5 workspace $ws10
+bindsym $mod+m workspace $ws11
+
+bindsym $mod+Shift+a move container to workspace $ws1
+bindsym $mod+Shift+s move container to workspace $ws2
+bindsym $mod+Shift+d move container to workspace $ws3
+bindsym $mod+Shift+f move container to workspace $ws4
+bindsym $mod+Shift+g move container to workspace $ws5
+bindsym $mod+Shift+1 move container to workspace $ws6
+bindsym $mod+Shift+2 move container to workspace $ws7
+bindsym $mod+Shift+3 move container to workspace $ws8
+bindsym $mod+Shift+4 move container to workspace $ws9
+bindsym $mod+Shift+5 move container to workspace $ws10
+bindsym $mod+Shift+m move container to workspace $ws11
+
+bindsym $mod+h     focus left
+bindsym $mod+j     focus down
+bindsym $mod+k     focus up
+bindsym $mod+l     focus right
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left      move left
+bindsym $mod+Shift+Down      move down
+bindsym $mod+Shift+Up        move up
+bindsym $mod+Shift+Right     move right
+
+bindsym $mod+0 mode "$mode_system"
+bindsym $mod+r mode "resize"
+
+bindsym $mod+z     fullscreen toggle
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+Shift+r     restart
+bindsym $mod+Shift+q     kill
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+Control+c reload
+bindsym $mod+Control+v split h
+# bindsym $mod+Control+i split v
+bindsym $mod+Control+u layout toggle split
+bindsym $mod+Control+e layout tabbed
+bindsym $mod+Control+t layout stacked
+
+bindsym $mod+Control+h      move left
+bindsym $mod+Control+j      move down
+bindsym $mod+Control+k      move up
+bindsym $mod+Control+l      move right
+bindsym $mod+Control+period move workspace to output right
+bindsym $mod+Control+comma  move scratchpad
+
+# APPS
+
+bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute         exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute      exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86MonBrightnessUp   exec --no-startup-id "brightnessctl s +2%"
+bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl s 2%-"
+bindsym Print                 exec --no-startup-id flameshot gui
+
+bindsym $mod+Return           exec --no-startup-id alacritty
+bindsym $mod+Shift+Return     exec --no-startup-id alacritty -e nf
+bindsym $mod+Control+Return   exec --no-startup-id alacritty -e zsh
+
+bindsym $mod+x                exec --no-startup-id "rofi -show-icons -show combi -combi-modes 'window,drun' -modes combi"
+bindsym $mod+w                exec --no-startup-id "i3-msg workspace 2; brave-browser"
+bindsym $mod+c                exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort -lines 0 -no-history -calc-command 'echo -n {result} | xclip -selection clipboard'"
+bindsym $mod+t                exec --no-startup-id "rofi -show tr -modes 'tr:rofi-trans.sh' -m normal"
+bindsym $mod+comma            exec --no-startup-id "i3-rofi-scratchpad"
+bindsym $mod+v                exec --no-startup-id playerctl previous -p spotify
+bindsym $mod+n                exec --no-startup-id playerctl next -p spotify
+bindsym $mod+b                exec --no-startup-id playerctl play-pause -p spotify
+
+bindsym $mod+Shift+w          exec --no-startup-id brave-browser
+bindsym $mod+Shift+c          exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort -calc-command 'echo -n {result} | xclip -selection clipboard'"
+bindsym $mod+Shift+t          exec --no-startup-id "web-dict"
+
+bindsym $mod+Control+s        exec --no-startup-id "run-or-scratchpad -i slack -c slack"
+bindsym $mod+Control+p        exec --no-startup-id "run-or-scratchpad -i spotify -c spotify"
+bindsym $mod+Control+i        exec --no-startup-id "run-or-scratchpad -i crx_bgdbmehlmdmddlgneophbcddadgknlpm -c 'gtk-launch brave-bgdbmehlmdmddlgneophbcddadgknlpm-Default.desktop'"
+bindsym $mod+Control+f        exec --no-startup-id "run-or-scratchpad -i crx_jjmemmllnjholihdmnldbfdegkemadej -c 'gtk-launch brave-jjmemmllnjholihdmnldbfdegkemadej-Default.desktop'"
+
+# bindsym $mod+Control+m        exec --no-startup-id "pactl set-source-mute 0 toggle"
+# bindsym $mod+Control+w        exec --no-startup-id "i3-display-swap.sh"
+# bindsym $mod+Control+a        exec --no-startup-id "i3-msg workspace 1; exec $browser --new-window $doc_pages"
+# bindsym $mod+Control+d        exec --no-startup-id "start-tesis.sh"
+# bindsym $mod+Control+o        exec --no-startup-id "i3-msg workspace 8; exec $browser --new-window $social_pages"
+# bindsym $mod+Control+space    exec --no-startup-id "toggle-keyboard-layout"
+#

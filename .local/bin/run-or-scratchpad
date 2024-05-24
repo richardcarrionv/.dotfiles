@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+instance=""
+command=""
+
+usage() {
+    echo "Usage: $(basename $0) [-i <instance>] [-c <command>]"
+    exit 1
+}
+
+while getopts ":i:c:" opt; do
+  case ${opt} in
+    i ) instance=$OPTARG
+        ;;
+    c ) command=$OPTARG
+        ;;
+    \? )
+        echo "Invalid option: $OPTARG" 1>&2
+        usage
+        ;;
+    : )
+        echo "Option -$OPTARG requires an argument." 1>&2
+        usage
+        ;;
+  esac
+done
+
+opened=$(i3-msg -t get_tree | jq -r ".. | select(.focused? == true) | .window_properties.instance")
+
+echo $opened > /home/carri/tmp.txt
+
+if [[ "$instance" == "$opened" ]]; then
+  i3-msg "[instance=$opened] move scratchpad"
+  exit 0;
+fi
+
+id=$(i3-msg -t get_tree | jq --arg instance "$instance" '.nodes[] | .nodes[] | .nodes[] | select(.name=="__i3_scratch") | .floating_nodes[] | .nodes[] | select(.window_properties.instance == $instance) | .window')
+
+if [[ -n "$id" ]]; then
+  i3-msg "[id=$id] scratchpad show"
+else
+  current_workspace=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name')
+  window_id=$(i3-msg -t get_tree | jq --arg instance "$instance" ' .nodes[] | .nodes[] | .nodes[] | .floating_nodes[] | .nodes[] | select(.window_properties.instance == $instance) | .window')
+
+  if [ -n "$window_id" ]; then
+    i3-msg "[id=$window_id] move container to workspace $current_workspace"
+    i3-msg focus floating
+    echo "Moved window with instance '$instance' to workspace '$current_workspace'."
+  else
+    echo "No window with instance '$instance' found. Running fallback command"
+    eval "$command"
+  fi
+fi

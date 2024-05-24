@@ -37,6 +37,9 @@ nmap <C-n> <action>(ActivateProjectToolWindow)
 nmap <C-n> :NERDTreeToggle<CR>
 nmap <leader>nf :NERDTreeFind<CR>
 
+nmap <C-r> <action>(ChooseRunConfiguration)
+nmap <leader>rt <action>(Run)
+nmap <leader>gn <action>(Generate)
 
 " nmap <C-k> <action>(EditorUp)
 " nmap <C-k> <action>(List-selectPreviousRow)
@@ -364,7 +367,6 @@ nmap <leader>rf <action>(RecentFiles)
 " CheckSuggestedPlugins
 " CheckVfsSanity
 " ChooseDebugConfiguration                           <A-S-F9>
-" ChooseRunConfiguration                             <A-S-F10>
 " ChooseRuntime
 " ClassNameCompletion                                <A-C- >
 " ClearAllNotifications
@@ -1600,7 +1602,6 @@ nmap <leader>rf <action>(RecentFiles)
 " FullLineGroup
 " FullyExpandTreeNode                                <j>
 " Gant.NewScript
-" Generate                                           <A-Ins>
 " Generate.Constructor.JavaScript
 " Generate.GetAccessor.JavaScript
 " Generate.GetSetAccessor.JavaScript
@@ -3046,7 +3047,6 @@ nmap <leader>rf <action>(RecentFiles)
 " RevertUnchanged
 " RevisionGraph
 " RightToolbarSideGroup
-" Run                                                <S-F10>
 " RunAnything
 " runCaptureSnapshot
 " RunClass                                           <C-S-F10>

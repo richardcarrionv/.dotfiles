@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Apploye
-Exec=/home/carri/bin/apploye.AppImage
-Icon=/home/carri/.local/share/applications/icons/apploye.png
-Terminal=false
-Categories=Work

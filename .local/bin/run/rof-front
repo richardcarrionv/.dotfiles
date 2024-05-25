@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+rof -i crx_jjmemmllnjholihdmnldbfdegkemadej -c 'gtk-launch brave-jjmemmllnjholihdmnldbfdegkemadej-Default.desktop' -n Front

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rof -i quickedit  -c 'alacritty --class quickedit --title "Quick Edit" --command quickedit' -n 'Quick Edit' -N 'n'
+

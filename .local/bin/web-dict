@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-i3-msg exec "brave-browser --new-window -app=https://www.merriam-webster.com/dictionary/"
-i3-msg -t subscribe '[ "window" ]'
-i3-msg floating enable
-i3-msg resize set 700 800
-i3-msg move position center

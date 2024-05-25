@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+# run or find
+
+instance=""            # instance to look for in the i3-msg -t get_tree JSON
+command=""             # command to run if no instance could be found
+fallback_name=""       # name to show in the notification
+notify="y"             # wheter to show or not a notification, improve this, search for optional flags
+
+usage() {
+    echo "Usage: $(basename $0) [-i <instance>] [-c <command>] [-n <fallback_name>] [-N <notify_?>]"
+    exit 1
+}
+
+while getopts ":i:c:n:N" opt; do
+  case ${opt} in
+    i ) instance=$OPTARG
+        ;;
+    c ) command=$OPTARG
+        ;;
+    n ) fallback_name=$OPTARG
+        ;;
+    N ) notify=$OPTARG
+        ;;
+    \? )
+        echo "Invalid option: $OPTARG" 1>&2
+        usage
+        ;;
+    : )
+        echo "Option -$OPTARG requires an argument." 1>&2
+        usage
+        ;;
+  esac
+done
+
+# if the focused window is the instance we are looking to move it to the scratchad
+focused=$(i3-msg -t get_tree | jq -r ".. | select(.focused? == true) | .window_properties.instance")
+if [[ "$instance" == "$focused" ]]; then
+  i3-msg "[instance=$focused] move scratchpad"
+  exit 0;
+fi
+
+# find the window id of the instance we are looking for in the scratchpad
+scratchpad_id=$(i3-msg -t get_tree |\
+  jq --arg instance "$instance" \
+  '.nodes[] | .nodes[] | .nodes[] | select(.name=="__i3_scratch") | .floating_nodes[] | .nodes[] | select(.window_properties.instance == $instance) | .window')
+
+# if there is an instance show it from the scratchpad
+if [[ -n "$scratchpad_id" ]]; then
+  i3-msg "[id=$scratchpad_id] scratchpad show"
+else
+
+  current_workspace=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name')
+
+  # find the window id of the instance in every workspace (has to be a floating_node, fix this)
+  window_id=$(i3-msg -t get_tree | jq --arg instance "$instance" ' .nodes[] | .nodes[] | .nodes[] | .floating_nodes[] | .nodes[] | select(.window_properties.instance == $instance) | .window')
+
+  # if there is an instance move it to the current workspace
+  # else just run the comand and notify
+  if [ -n "$window_id" ]; then
+    i3-msg "[id=$window_id] move container to workspace $current_workspace"
+    i3-msg focus floating
+  else
+    echo "No window with instance '$instance' found. Running fallback command"
+    if [[ "$notify" == "y" ]]; then
+      if [[ -n "$fallback_name" ]]; then
+        notify-send "Running $fallback_name"
+      else
+        notify-send "Running $command"
+      fi
+    fi
+    eval "$command"
+  fi
+fi

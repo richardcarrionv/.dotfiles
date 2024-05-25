@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ros -i 'brave-browser' -c 'brave-browser' -w "2"

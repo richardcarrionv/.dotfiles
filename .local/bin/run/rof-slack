@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+rof -i slack -c slack -n Slack

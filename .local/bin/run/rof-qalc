@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+rof -i qalc  -c 'alacritty --class qalc --title "Qalculator" --command qalc' -n 'Qalculator' -N 'n'

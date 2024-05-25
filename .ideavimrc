@@ -37,7 +37,7 @@ nmap <C-n> <action>(ActivateProjectToolWindow)
 nmap <C-n> :NERDTreeToggle<CR>
 nmap <leader>nf :NERDTreeFind<CR>
 
-nmap <C-r> <action>(ChooseRunConfiguration)
+nmap <leader>rc <action>(ChooseRunConfiguration)
 nmap <leader>rt <action>(Run)
 nmap <leader>gn <action>(Generate)
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#
-dirs="$HOME/.config $HOME/.local/bin $HOME/dev"
+
+dirs="$HOME/.config $HOME/.local/bin $HOME/dev $HOME/.local/bin/run"
 max_depth=""
 min_depth=""
 window_name='neovim'

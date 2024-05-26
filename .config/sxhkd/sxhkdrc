@@ -1,0 +1,125 @@
+alt + shift + Tab
+  i3-display-swap.sh
+
+alt + control + space
+  toggle-keyboard-layout
+
+alt + Return
+  rof-scratch-term
+
+alt + shift + Return
+  ros-mainterm
+
+alt + control + Return
+  rof-quickedit
+
+alt + comma 
+  i3-rofi-scratchpad
+
+alt + c 
+  rof-qalc
+
+alt + control + p 
+  rof-spotify
+
+alt + control + f 
+  rof-front
+
+alt + e ; {c}
+	{rof-charles}
+
+alt + control + i
+  rof-linear
+
+alt + control + s
+  rof-slack
+
+alt + t 
+  rofi -show tr -modes 'tr:rofi-trans.sh' -m normal
+
+alt + shift + t
+  deepl
+
+alt + control + t
+  alacritty --class term --title Terminal --command zsh
+
+alt + w
+  i3-msg workspace 2 && brave-browser
+
+alt + shift + w; {w,s}
+  {i3-msg workspace 2 && brave-browser, brave-browser --new-window https://web.whatsapp.com}
+
+alt + x 
+	rofi-main
+
+XF86AudioRaiseVolume  
+  pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+
+XF86AudioLowerVolume  
+  pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+
+XF86AudioMute         
+  pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+XF86AudioMicMute      
+  pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+XF86MonBrightnessUp   
+  brightnessctl s +2%
+
+XF86MonBrightnessDown 
+  brightnessctl s 2%-
+
+Print                 
+  flameshot gui
+
+# Don't bind (i3)
+#  alt + z     
+#  alt + space 
+#  alt + a
+#  alt + s
+#  alt + d
+#  alt + f
+#  alt + g
+#  alt + m
+#  alt + 1
+#  alt + 2
+#  alt + 3
+#  alt + 4
+#  alt + 5
+#  alt + 0
+#  alt + h     
+#  alt + j     
+#  alt + k     
+#  alt + l     
+#  alt + Left  
+#  alt + Down  
+#  alt + Up    
+#  alt + Right 
+#  alt + shift + a
+#  alt + shift + s
+#  alt + shift + d
+#  alt + shift + f
+#  alt + shift + g
+#  alt + shift + m
+#  alt + shift + 1
+#  alt + shift + 2
+#  alt + shift + 3
+#  alt + shift + 4
+#  alt + shift + 5
+#  alt + shift + Left  
+#  alt + shift + Down  
+#  alt + shift + Up    
+#  alt + shift + Right 
+#  alt + shift + r     
+#  alt + shift + q     
+#  alt + shift + space 
+#  alt + control + c 
+#  alt + control + period 
+#  alt + control + comma  
+#  alt + control + r 
+#  alt + control + y
+#  alt + control + h   
+#  alt + control + j   
+#  alt + control + k   
+#  alt + control + l   

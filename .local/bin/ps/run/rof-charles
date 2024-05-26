@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+rof -i "com-xk72-charles-gui-MainWithClassLoader" -c 'gtk-launch charles.desktop' -n Charles

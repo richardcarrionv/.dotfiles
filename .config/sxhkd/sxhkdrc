@@ -52,6 +52,9 @@ alt + shift + w; {w,s}
 alt + x 
 	rofi-main
 
+alt + control + n 
+	rof-notes
+
 XF86AudioRaiseVolume  
   pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 

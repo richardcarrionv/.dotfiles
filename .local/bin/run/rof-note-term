@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-rof -i noteterm  -c 'alacritty --class noteterm --title "Notes Terminal" --command "nvim $HOME/notes/" ' -n 'Notes Terminal' -N 'N'
-

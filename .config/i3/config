@@ -62,21 +62,33 @@ workspace $ws9 output eDP-1
 workspace $ws10 output eDP-1
 workspace $ws11 output eDP-1
 
-set $mode_resize Small Float (s), Center Float(c), Window (w), (h,j,k,l)
+set $mode_resize Move (n,v,H,L,c), Window (w), (h,j,k,l)
 mode "$mode_resize" {
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
 
-        bindsym s floating enable, resize set 1000 650, move position 1500 px 400 px, mode "default"
-        bindsym w floating disable,  mode "default"
-        bindsym c floating enable, resize set 2000 950, move position center, mode "default"
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resije grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resije grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym n       floating enable, resize set 1000 650, move position 1500 px 400 px, mode "default"
+        bindsym v       floating enable, resize set 1000 650, move position 50 px 400 px, mode "default"
+        bindsym shift+h floating enable, resize set 1000 1000, move position 10 px 50 px, mode "default"
+        bindsym shift+l floating enable, resize set 1000 1000, move position 1500 px 50 px, mode "default"
+        bindsym w       floating disable,  mode "default"
+        bindsym c       floating enable, resize set 2000 950, move position center, mode "default"
+
+        bindsym $mod+Control+h   move left
+        bindsym $mod+Control+j   move down
+        bindsym $mod+Control+k   move up
+        bindsym $mod+Control+l   move right
+        bindsym $mod+Shift+Left  move left
+        bindsym $mod+Shift+Down  move down
+        bindsym $mod+Shift+Up    move up
+        bindsym $mod+Shift+Right move right
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -131,6 +143,10 @@ for_window [class="qalc"] move position 1950 px 600 px
 for_window [class="quickedit"] floating enable
 for_window [class="quickedit"] resize set 1800 900
 for_window [class="quickedit"] move position center
+
+for_window [class="notes"] floating enable
+for_window [class="notes"] resize set 1200 900
+for_window [class="notes"] move position 1350 px 100 px
 
 for_window [class="Pavucontrol"] floating enable
 

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rof -i scratchterm  -c 'alacritty --class scratchterm --title "Scratch Terminal" --command zsh' -n 'Scratch Terminal' -N 'N'
+

@@ -163,6 +163,10 @@ for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] floating enable
 for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] resize set 2000 950
 for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] move position center
 
+for_window [instance="lxappearance"] floating enable
+for_window [instance="lxappearance"] resize set 1600 1000
+for_window [instance="lxappearance"] move position center
+
 # Bindings for workspaces, modes, focus and moves
 bindsym $mod+a workspace $ws1
 bindsym $mod+s workspace $ws2

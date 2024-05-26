@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-rofi -show-icons -show combi -combi-modes 'window,drun' -modes combi

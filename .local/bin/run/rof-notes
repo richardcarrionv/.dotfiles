@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-
-rof -i notes  -c 'alacritty --class notes --title "Notes" --command zsh -c "cd $HOME/notes/ && nvim ."' -n 'Notes' -N 'n'
-

@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-ros -i mainterm -c 'alacritty --class mainterm --title "Main Terminal"' -w "4"

@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-rof -i crx_bgdbmehlmdmddlgneophbcddadgknlpm -c 'gtk-launch brave-bgdbmehlmdmddlgneophbcddadgknlpm-Default.desktop' -n Linear

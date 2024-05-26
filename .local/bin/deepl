@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-i3-msg exec "brave-browser --app=https://www.deepl.com/translator"
-i3-msg -t subscribe '[ "window" ]'
-i3-msg floating enable
-i3-msg resize set 1000 800
-i3-msg move position 1500 px 200 px,

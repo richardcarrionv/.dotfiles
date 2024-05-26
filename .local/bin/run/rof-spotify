@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-rof -i spotify -c spotify -n "Spotify"

@@ -34,12 +34,14 @@ done
 # find the workspace where .window_properties.instance == $instance is
 find_workspace=$(i3-msg -t get_tree | jq --arg instance "$instance" '.nodes[] | .nodes[] | .nodes[] | select(.nodes[].window_properties.instance == $instance) | .num')
 
+echo $find_workspace
+
 # if the workspace could not be found then run the command
 # else just switch to that workspace
-if [[ -z "$find_workspace" ]]; then
+if [[ -n "$find_workspace" ]]; then
+  i3-msg "workspace $find_workspace"
+else
   i3-msg "workspace $switch_to_workspace"
   eval "$command"
-else
-  i3-msg "workspace $find_workspace"
 fi
 

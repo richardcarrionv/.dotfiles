@@ -39,7 +39,10 @@ nmap <leader>nf :NERDTreeFind<CR>
 
 nmap <leader>rc <action>(ChooseRunConfiguration)
 nmap <leader>rt <action>(Run)
-nmap <leader>gn <action>(Generate)
+nmap <leader>ga <action>(Generate)
+
+nmap <leader>ge <action>(GotoTest)
+" GotoTest                                           <C-S-T>
 
 " nmap <C-k> <action>(EditorUp)
 " nmap <C-k> <action>(List-selectPreviousRow)
@@ -64,8 +67,8 @@ nmap <leader>gn <action>(Generate)
 " nmap <C-j> <action>(Terminal.SelectBlockBelow)
 " nmap <C-j> <action>(Tree-selectNext)
 "
-nmap <leader>n <action>(NextOccurence)
-nmap <leader>p <action>(PreviousOccurence)
+nmap <leader>j <action>(NextOccurence)
+nmap <leader>k <action>(PreviousOccurence)
 
 
 " nmap <C-S-f> <action>(Find)
@@ -1922,7 +1925,6 @@ nmap <leader>rf <action>(RecentFiles)
 " GoToTab8
 " GoToTab9
 " GoToTargetEx
-" GotoTest                                           <C-S-T>
 " GotoTypeDeclaration                                <C-S-B> button=1 clickCount=1 modifiers=192
 " GotoUrlAction                                      <C-S-\>
 " Gradle.AddGradleDslDependencyAction

@@ -5,8 +5,13 @@ set $mod Mod1
 set $Locker i3lock && sleep 1
 set $browser brave-browser
 
+# gaps inner 6
+# gaps outer 4
+# gaps top 1
+
 gaps inner 0
 gaps outer 0
+
 smart_borders on
 default_border pixel 3
 default_floating_border normal
@@ -36,8 +41,7 @@ exec --no-startup-id sxhkd -s /run/user/1000/sxhkd.fifo
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper-2.jpg
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
@@ -131,7 +135,7 @@ mode "$mode_system" {
 
 for_window [class="Thunar"] move container to workspace $ws10; workspace $ws10
 
-for_window [class="zoom"] floating enable, move container to workspace $ws11
+for_window [class="zoom"] floating enable
 for_window [class="zoom"] resize set 1200 800
 
 for_window [class="1Password"] floating enable
@@ -180,6 +184,10 @@ for_window [title="Spotify"] move position center
 for_window [instance="crx_bgdbmehlmdmddlgneophbcddadgknlpm"] floating enable
 for_window [instance="crx_bgdbmehlmdmddlgneophbcddadgknlpm"] resize set 1600 1000
 for_window [instance="crx_bgdbmehlmdmddlgneophbcddadgknlpm"] move position center
+
+for_window [class="crx_nngceckbapebfimnlniiiahkandclblb"] floating enable
+for_window [class="crx_nngceckbapebfimnlniiiahkandclblb"] resize set 1000 600
+for_window [class="crx_nngceckbapebfimnlniiiahkandclblb"] move position 1500 px 400 px
 
 for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] floating enable
 for_window [instance="crx_jjmemmllnjholihdmnldbfdegkemadej"] resize set 2000 950

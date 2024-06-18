@@ -100,7 +100,7 @@ alias ideau="$HOME/bin/idea-ultimate/bin/idea.sh"
 alias ap="tmuxp load --yes /home/carri/.local/share/tmuxp/apollo.yaml"
 alias wp="tmuxp load --yes /home/carri/.local/share/tmuxp/public-web-app.yaml"
 alias fs="tmuxp load --yes /home/carri/.local/share/tmuxp/freightsimple.yaml"
-alias edp="xrandr --output eDP-1 --mode "1920x1200""
+alias edp="xrandr --output eDP-1 --scale 0.75"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

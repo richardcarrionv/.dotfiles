@@ -1,3 +1,5 @@
 matches:
-  - trigger: "::c"
-    replace: "```"
+  - trigger: "::k"
+    replace: "```kotlin"
+  - trigger: "::t"
+    replace: "```typescript"

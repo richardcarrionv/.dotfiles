@@ -2,8 +2,10 @@
 
 ## Dependencies
 ```
-alacritty tmux neovim polybar rofi i3 zsh fzf feh xrandr sxhkd xclip qalc jq yad xdotool
+alacritty tmux neovim polybar rofi i3 zsh fzf feh xrandr sxhkd xclip qalc jq yad xdotool wmctrl
 ```
+
+wmctrl for polywins
 
 ## Installation
 ```

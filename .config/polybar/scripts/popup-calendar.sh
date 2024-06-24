@@ -35,9 +35,10 @@ calendar)
         --title="yad-calendar" >/dev/null &
     ;;
 all)
-    echo "$(date +"%A  %d-%m-%Y - EC %H:%M") - NY $(TZ='America/New_York' date +"%H:%M") - LN $(TZ='Europe/London' date +"%H:%M") - VN $(TZ='America/Vancouver' date +"%H:%M")"
+    echo "$(date +"%A  %d-%m-%Y - EC %H:%M") - NY $(TZ='America/New_York' date +"%H") - LN $(TZ='Europe/London' date +"%H") - VN $(TZ='America/Vancouver' date +"%H")"
     ;;
 *)
+    # echo "$(date +"%A  %d-%m-%Y - %H:%M:%S") - NY $(TZ='America/New_York' date +"%H") - LN $(TZ='Europe/London' date +"%H") - VA $(TZ='America/Vancouver' date +"%H")"
     echo "$(date +"%A %d/%m/%Y - EC %H:%M:%S")"
     ;;
 esac

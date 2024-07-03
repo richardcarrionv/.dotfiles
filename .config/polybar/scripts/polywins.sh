@@ -13,7 +13,7 @@ inactive_bg=
 inactive_underline=
 
 separator="·"
-show="window_title" # options: window_title, window_class, window_classname
+show="window_class" # options: window_title, window_class, window_classname
 forbidden_classes="Polybar Conky Gmrun"
 empty_desktop_message="Desktop"
 
@@ -244,7 +244,7 @@ generate_window_list() {
 
 	# Print empty desktop message if no windows are open
 	if [ "$window_count" = 0 ]; then
-		printf "%s" "$empty_desktop_message"
+		printf "%s" "%{F$inactive_text_color}$empty_desktop_message%{F-}"
 	fi
 	
 	# Print newline

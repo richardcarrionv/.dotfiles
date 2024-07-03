@@ -4,32 +4,35 @@ Plug 'tpope/vim-commentary'
 
 " Generate code
 " Run test
+"
+" Close other tabs
+" Close tab
 
 
 set number
 set relativenumber
 set clipboard+=unnamed
 
+set hlsearch
+
 let mapleader=" "
 nmap  <leader>w :write<CR>
 nmap  <leader>q :quit<CR>
 nmap  <leader><Enter> o<ESC>
-
-
-		
 
 nmap <leader>l <action>(NextTab)
 nmap <leader>h <action>(PreviousTab)
 
 nmap <leader>c<leader> gcc
 xnoremap <leader>c<leader> :Commentary<CR>
- 
+
+sethandler <C-f> a:ide
+sethandler <C-j> a:ide
+sethandler <C-k> a:ide
 
 
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
 nmap <leader>fl <action>(GotoFile)
 
 
@@ -44,29 +47,7 @@ nmap <leader>ga <action>(Generate)
 nmap <leader>ge <action>(GotoTest)
 " GotoTest                                           <C-S-T>
 
-" nmap <C-k> <action>(EditorUp)
-" nmap <C-k> <action>(List-selectPreviousRow)
-" nmap <C-k> <action>(NavBar-selectUp)
-" nmap <C-k> <action>(PopupMenu-selectPrevious)
-" nmap <C-k> <action>(SplitChooser.SplitTop)
-" nmap <C-k> <action>(Table-selectPreviousRow)
-" nmap <C-k> <action>(Terminal.SelectBlockAbove)
-" nmap <C-k> <action>(Tree-selectPrevious)
-"
-"
-" nmap <C-j> <action>(List-selectNextRow)
-" nmap <C-j> <action>(PopupMenu-selectNext)
-" nmap <C-j> <action>(Table-selectNextRow)
-" nmap <C-j> <action>(Tree-selectNext)
-" nmap <C-j> <action>(EditorDown)
-" nmap <C-j> <action>(List-selectNextRow)
-" nmap <C-j> <action>(NavBar-selectDown)
-" nmap <C-j> <action>(PopupMenu-selectNext)
-" nmap <C-j> <action>(SplitChooser.SplitDown)
-" nmap <C-j> <action>(Table-selectNextRow)
-" nmap <C-j> <action>(Terminal.SelectBlockBelow)
-" nmap <C-j> <action>(Tree-selectNext)
-"
+
 nmap <leader>j <action>(NextOccurence)
 nmap <leader>k <action>(PreviousOccurence)
 

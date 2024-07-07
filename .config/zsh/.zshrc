@@ -95,11 +95,25 @@ alias src="source $ZDOTDIR/.zshrc && source $HOME/.zshenv"
 alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
 
 alias tm='tmux attach-session -t home || tmux new -s home -n zsh'
+alias sc='tmux attach-session -t scratch || tmux new -s scratch -n zsh'
 alias ideau="$HOME/bin/idea-ultimate/bin/idea.sh"
 
-alias ap="tmuxp load --yes /home/carri/.local/share/tmuxp/apollo.yaml"
-alias wp="tmuxp load --yes /home/carri/.local/share/tmuxp/public-web-app.yaml"
-alias fs="tmuxp load --yes /home/carri/.local/share/tmuxp/freightsimple.yaml"
+alias ap="cd \$(fzf-worktrees-bare-repo -r /home/carri/dev/wk/fs-bare -a projects/apollo)"
+alias apn="cd \$(fzf-worktrees-bare-repo -r /home/carri/dev/wk/fs-bare -a projects/apollo) && nvim ."
+alias apr="cd \$(fzf-worktrees-bare-repo -r /home/carri/dev/wk/fs-bare -a projects/apollo) && BROWSER=none npm run start"
+
+alias wp="cd \$(fzf-worktrees-bare-repo -r /home/carri/dev/wk/fs-bare -a projects/public-web-app)"
+alias wpn="cd \$(fzf-worktrees-bare-repo -r /home/carri/dev/wk/fs-bare -a projects/public-web-app) && nvim ."
+alias wpr="cd \$(fzf-worktrees-bare-repo -r /home/carri/dev/wk/fs-bare -a projects/public-web-app) && BROWSER=none npm run start"
+
+alias api="cd \$(fzf-worktrees-bare-repo -r /home/carri/dev/wk/fs-bare -a projects/public-server-api)"
+
+alias ideau="idea.sh . > /dev/null 2>&1 &"
+alias fs="tmuxp load --yes /home/carri/.local/share/tmuxp/fs-bare.yaml"
+
+alias app="tmuxp load --yes /home/carri/.local/share/tmuxp/apollo.yaml"
+alias wpp="tmuxp load --yes /home/carri/.local/share/tmuxp/public-web-app.yaml"
+
 alias edp="xrandr --output eDP-1 --scale 0.75"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.

@@ -6,3 +6,7 @@ if [ $current_session == 'back' ]; then
 else
   tmux switch-client -t 'back'
 fi
+
+if [[ -n "expression" ]]; then
+  command ...
+fi

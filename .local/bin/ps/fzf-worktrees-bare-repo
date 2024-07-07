@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+usage() {
+    echo "Usage: $(basename $0) [-r <git-repo>] [-a <additional path>]"
+    exit 1
+}
+
+while getopts ":r:a:" opt; do
+  case ${opt} in
+    r ) dir=$OPTARG
+        ;;
+    a ) additional_path=$OPTARG
+        ;;
+    \?)
+        echo "Invalid option: $OPTARG" 1>&2
+        usage
+        ;;
+    :)
+        echo "Option -$OPTARG requires an argument." 1>&2
+        usage
+        ;;
+  esac
+done
+
+
+if [[ -z "$dir" ]]; then
+  usage
+  exit 0; 
+fi
+
+selected=$(find $dir -mindepth 1 -maxdepth 1 \
+  -not -path '*\.dotfiles*'\
+  -not -path '*hooks*'\
+  -not -path '*info*'\
+  -not -path '*branches*'\
+  -not -path '*objects*'\
+  -not -path '*refs*'\
+  -not -path '*worktrees*'\
+  -type d | sed "s|$dir/||" | fzf)
+
+final="$dir/$selected"
+
+if [[ -n "$additional_path" ]]; then
+  final="$dir/$selected/$additional_path"
+fi
+
+echo $final

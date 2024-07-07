@@ -36,6 +36,7 @@ selected=$(find $dir -mindepth 1 -maxdepth 1 \
   -not -path '*objects*'\
   -not -path '*refs*'\
   -not -path '*worktrees*'\
+  -not -path '*logs*'\
   -type d | sed "s|$dir/||" | fzf)
 
 final="$dir/$selected"

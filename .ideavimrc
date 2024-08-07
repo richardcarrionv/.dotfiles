@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 set number
 set relativenumber
 set clipboard+=unnamed
+set ignorecase
 
 set hlsearch
 

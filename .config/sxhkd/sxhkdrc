@@ -19,6 +19,9 @@ alt + comma
 alt + c 
   rof-qalc
 
+alt + control + 0
+  rof-color-picker
+
 alt + control + p 
   rof-spotify
 
@@ -44,7 +47,7 @@ alt + control + t
   alacritty --class term --title Terminal --command zsh
 
 alt + w
-  i3-msg workspace 2 && brave-browser
+  ~/bin/zen.AppImage
 
 alt + shift + w; {w,s}
   {i3-msg workspace 2 && brave-browser, brave-browser --new-window https://web.whatsapp.com}
@@ -54,6 +57,9 @@ alt + x
 
 alt + control + n 
 	rof-notes
+
+alt + control + z 
+	polybar-msg cmd toggle
 
 XF86AudioRaiseVolume  
   pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status

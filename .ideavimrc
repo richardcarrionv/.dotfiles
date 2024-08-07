@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 set number
 set relativenumber
 set clipboard+=unnamed
+set ignorecase
 
 set hlsearch
 
@@ -29,6 +30,7 @@ xnoremap <leader>c<leader> :Commentary<CR>
 sethandler <C-f> a:ide
 sethandler <C-j> a:ide
 sethandler <C-k> a:ide
+sethandler <C-p> a:ide
 
 
 nmap <C-h> <C-w>h
@@ -48,8 +50,8 @@ nmap <leader>ge <action>(GotoTest)
 " GotoTest                                           <C-S-T>
 
 
-nmap <leader>j <action>(NextOccurence)
-nmap <leader>k <action>(PreviousOccurence)
+nmap <leader>n <action>(NextOccurence)
+nmap <leader>p <action>(PreviousOccurence)
 
 
 " nmap <C-S-f> <action>(Find)
@@ -60,6 +62,8 @@ nmap gr <action>(FindUsages)
 
 
 nmap <leader>fm <action>(ReformatCode)
+nmap <leader>fi <action>(OptimizeImports)
+" nmap <leader>fm <action>(ReformatCode)<action>(OptimizeImports)
 
 
 nmap <leader>zm <action>(ToggleDistractionFreeMode)

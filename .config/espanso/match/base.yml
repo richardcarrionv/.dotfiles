@@ -11,12 +11,5 @@ matches:
   # Simple text replacement
   - trigger: ":espanso"
     replace: "Hi there!"
-  - trigger: ":;password"
-    replace: "123123qweqwe.r"
-  - trigger: ":;email"
-    replace: "{{output}}@e2e.freightsimple.net"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "uuidgen"
+  - trigger: "::supp"
+    replace: '@Suppress("UNUSED_PARAMETER", "UNUSED_VARIABLE")'

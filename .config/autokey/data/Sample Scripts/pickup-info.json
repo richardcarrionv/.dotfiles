@@ -1,0 +1,30 @@
+{
+    "type": "script",
+    "description": "pickup-info",
+    "store": {},
+    "modes": [
+        1
+    ],
+    "usageCount": 8,
+    "prompt": false,
+    "omitTrigger": false,
+    "showInTrayMenu": true,
+    "abbreviation": {
+        "abbreviations": [
+            "pck"
+        ],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[^ \\n]"
+    },
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "filter": {
+        "regex": "freightsimple",
+        "isRecursive": false
+    }
+}

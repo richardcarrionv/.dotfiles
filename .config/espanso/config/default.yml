@@ -43,4 +43,5 @@ disable_x11_fast_inject: true
 inject_delay: 1 
 key_delay: 1
 
-search_shortcut: off
+search_shortcut: ALT+SHIFT+E
+

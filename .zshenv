@@ -72,8 +72,9 @@ export LAUNCHER="rofi"
 # export WM="Hyprland"
 # export VIDEO="mpv"
 # export IMAGE="sxiv"
+#
+export ZSH_FZF_HISTORY_SEARCH_BIND="^k"
 
 path=("$HOME/.local/bin" "/home/carri/.sdkman " "$HOME/bin" "$HOME/.local/bin/ps/run" "$HOME/.local/bin/ps" "$HOME/bin/ideau/bin/" "$path[@]")
 export PATH
-
-# . "/home/carri/.local/share/cargo/env"
+source "/home/carri/.local/share/cargo/env"
